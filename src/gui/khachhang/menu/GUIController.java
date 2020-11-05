@@ -1,11 +1,11 @@
 package gui.khachhang.menu;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import util.GUILoader;
@@ -14,12 +14,24 @@ public class GUIController implements Initializable {
 	@FXML
 	private GridPane list;
 	
+	@FXML
+	private TextField filter;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		initList();
+		
+		filter.textProperty().addListener((observable, oldValue, newValue) -> {
+		    initList(newValue);
+		});
 	}
 	
 	private void initList() {
+		initList("");
+	}
+	
+	private void initList(String filter) {
+		list.getChildren().clear();
 		
 		int number = 14;
 		int colPerRow = 4;
@@ -31,6 +43,7 @@ public class GUIController implements Initializable {
 			
 			AnchorPane element = (AnchorPane) gui.getNode();
 			ListController elementController = (ListController) gui.getController();
+			elementController.setImage("Avatar.png");
 			elementController.setName("Hello");
 			elementController.setGmail("1234@gmail.com");
 			
@@ -43,5 +56,4 @@ public class GUIController implements Initializable {
 			}
 		}
 	}
-
 }

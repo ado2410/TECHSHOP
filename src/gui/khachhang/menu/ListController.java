@@ -1,9 +1,9 @@
 package gui.khachhang.menu;
 
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import util.Util;
 
 public class ListController {
 	@FXML
@@ -13,9 +13,8 @@ public class ListController {
 	@FXML
 	private Text gmail;
 	
-	public void setImage(String url) {
-		Image imagem = new Image(url, 100, 100, false, false);
-		image.setImage(imagem);
+	public void setImage(String fileName) {
+		image.setImage(Util.loadImage("general/Avatar.png", 100, 100));
 	}
 	
 	public void setName(String name) {
