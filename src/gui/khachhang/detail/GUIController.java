@@ -49,10 +49,13 @@ public class GUIController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		initInfo();
+		
 	}
 	
-	private void initInfo() {
+	public void initInfo(String id) {
+		//Khoi tao cac thong tin co ban
+		
+		
 		
 		//Khoi tao cac mat hang da mua
 		for (int i = 0; i < 10; i++) {

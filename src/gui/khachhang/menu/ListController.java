@@ -3,7 +3,9 @@ package gui.khachhang.menu;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import util.GUILoader;
 import util.Util;
+import gui.khachhang.detail.GUIController;
 
 public class ListController {
 	@FXML
@@ -27,6 +29,9 @@ public class ListController {
 	
 	@FXML
 	private void onDetailAction() {
-		
+		GUILoader gui = GUILoader.load("gui/khachhang/detail/GUI");
+		GUIController controller = (GUIController) gui.getController();
+		controller.initInfo("");
+		GUILoader.loadToMainScene(gui.getNode());
 	}
 }

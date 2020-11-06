@@ -9,16 +9,16 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.menu.ListController">
    <children>
+      <Button layoutX="35.0" layoutY="225.0" mnemonicParsing="false" onAction="#onDetailAction" prefHeight="300.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </padding>
+      </Button>
       <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" layoutX="51.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/general/Avatar.png" />
          </image></ImageView>
       <Text fx:id="name" layoutX="6.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên khách hàng" textAlignment="CENTER" wrappingWidth="189.13671875" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="4.86328125" />
       <Text fx:id="gmail" layoutX="6.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên gmail" textAlignment="CENTER" wrappingWidth="189.13671875" />
-      <Button layoutX="35.0" layoutY="225.0" mnemonicParsing="false" onAction="#onDetailAction" text="Thông tin chi tiết">
-         <padding>
-            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
-         </padding>
-      </Button>
    </children>
 </AnchorPane>

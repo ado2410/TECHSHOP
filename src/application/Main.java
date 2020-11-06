@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import util.GUILoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 
 
 public class Main extends Application {
@@ -21,10 +19,8 @@ public class Main extends Application {
 			primaryStage.setTitle("TECHNOLOGY SHOP");
 			primaryStage.show();
 			
-			BorderPane borderpane = (BorderPane) gui.getNode();
-			BorderPane khachhang = (BorderPane) GUILoader.load("gui/general/Main").getNode();
-			borderpane.setCenter(khachhang);
-			
+			GUILoader.mainNode = (BorderPane) gui.getNode();
+			GUILoader.loadMainScene();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

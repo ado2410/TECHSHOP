@@ -1,18 +1,24 @@
 package util;
 
 import java.io.IOException;
+import java.util.Stack;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.layout.BorderPane;
 
 public class GUILoader {
-	private Object node;
+	public static BorderPane mainNode;
+	private Node node;
 	private Object controller;
 	
-	public Object getNode() {
+	private static Stack<Node> previousNodes = new Stack<>();
+	
+	public Node getNode() {
 		return node;
 	}
 
-	public void setNode(Object node) {
+	public void setNode(Node node) {
 		this.node = node;
 	}
 
@@ -41,5 +47,29 @@ public class GUILoader {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	/**
+	 * Thay doi khung canh sang canh moi
+	 * @param node
+	 */
+	static public void loadToMainScene(Node node) {
+		previousNodes.push(mainNode.getCenter());
+		mainNode.setCenter(node);
+	}
+	
+	static public void loadPreviousScene() {
+		if (previousNodes.empty())
+			loadMainScene();
+		else 
+			mainNode.setCenter(previousNodes.pop());
+	}
+	
+	/**
+	 * Load trang chu
+	 */
+	static public void loadMainScene() {
+		GUILoader.loadToMainScene(GUILoader.load("gui/general/MainMenu").getNode());
+		previousNodes.clear();
 	}
 }
