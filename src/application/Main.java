@@ -6,6 +6,7 @@ import util.GUILoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 
 
 public class Main extends Application {
@@ -21,7 +22,7 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			BorderPane borderpane = (BorderPane) gui.getNode();
-			AnchorPane khachhang = (AnchorPane) GUILoader.load("gui/khachhang/menu/GUI").getNode();
+			BorderPane khachhang = (BorderPane) GUILoader.load("gui/general/Main").getNode();
 			borderpane.setCenter(khachhang);
 			
 		} catch(Exception e) {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="53.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.PurchasedBoxController">
+   <children>
+      <Button minWidth="500.0" mnemonicParsing="false" onAction="#onAction" prefHeight="71.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fx:id="image" fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0">
+         <image>
+            <Image url="@../../../../images/general/Avatar.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="id" layoutX="80.0" layoutY="18.0" text="Mã hóa đơn" AnchorPane.leftAnchor="80.0" />
+      <Label fx:id="date" layoutX="250.0" layoutY="18.0" text="Ngày mua" AnchorPane.leftAnchor="200.0" />
+      <Label fx:id="price" layoutX="417.0" layoutY="18.0" text="Giá" AnchorPane.rightAnchor="50.0" />
+   </children>
+</AnchorPane>

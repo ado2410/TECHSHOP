@@ -1,4 +1,4 @@
-package gui.khachhang.menu;
+package gui.general;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
@@ -10,23 +10,18 @@ public class ListController {
 	private ImageView image;
 	@FXML
 	private Text name;
+	
 	@FXML
-	private Text gmail;
+	private void onAction() {
+		
+	}
 	
 	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 100, 100));
+		image.setImage(Util.loadImage("general/" + fileName, 200, 200));
 	}
 	
 	public void setName(String name) {
 		this.name.setText(name);
 	}
 	
-	public void setGmail(String gmail) {
-		this.gmail.setText(gmail);
-	}
-	
-	@FXML
-	private void onDetailAction() {
-		
-	}
 }
