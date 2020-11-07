@@ -33,14 +33,20 @@ public class GUIController implements Initializable {
 	private Text address;
 	@FXML
 	private VBox purchasedGrid;
+	@FXML
+	private GridPane infoGrid;
+	@FXML
+	private VBox container;
 	
 	@FXML
 	private void onInfoAction() {
-		
+		container.getChildren().clear();
+		container.getChildren().add(infoGrid);
 	}
 	
 	@FXML void onPurchasedAction() {
-		
+		container.getChildren().clear();
+		container.getChildren().add(purchasedGrid);
 	}
 	
 	@FXML void onOtherInfoAction() {
@@ -49,7 +55,7 @@ public class GUIController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		onInfoAction();
 	}
 	
 	public void initInfo(String id) {
@@ -58,7 +64,7 @@ public class GUIController implements Initializable {
 		
 		
 		//Khoi tao cac mat hang da mua
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 20; i++) {
 			GUILoader gui = GUILoader.load("gui/khachhang/detail/PurchasedBox");
 			AnchorPane node = (AnchorPane) gui.getNode();
 			PurchasedBoxController controller = (PurchasedBoxController) gui.getController();
