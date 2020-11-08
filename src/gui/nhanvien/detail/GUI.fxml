@@ -28,12 +28,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="nameLeft1" layoutX="18.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Biệt Danh" textAlignment="CENTER" wrappingWidth="304.6666564941406">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <VBox layoutX="30.0" layoutY="359.0" prefHeight="196.0" prefWidth="264.0" spacing="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <VBox layoutX="30.0" layoutY="324.0" prefHeight="196.0" prefWidth="264.0" spacing="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <children>
                   <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="267.0" text="Thông Tin Chung" />
                   <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="267.0" text="Sản Phẩm Đã Bán" />
@@ -141,26 +136,22 @@
             </Label>
             <Text fx:id="address11" layoutX="599.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4050000" textAlignment="CENTER" wrappingWidth="141.13540649414062" />
             <Text fx:id="address111" layoutX="388.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="300000" textAlignment="CENTER" wrappingWidth="141.13540649414062" />
-            <Button layoutX="634.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Làm Mới" />
-            <Button layoutX="775.0" layoutY="384.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Tính Lương" />
-            <Button layoutX="423.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Thêm" />
-            <Button layoutX="165.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Cập Nhập" />
-            <Label layoutX="56.0" layoutY="479.0" text="Chức Vụ">
+            <Label layoutX="56.0" layoutY="429.0" text="Chức Vụ">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="180.0" layoutY="523.0" text="Quản Lý">
+            <Label layoutX="180.0" layoutY="473.0" text="Quản Lý">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="57.0" layoutY="566.0" text="Bộ Phận Quản Lý">
+            <Label layoutX="57.0" layoutY="516.0" text="Bộ Phận Quản Lý">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="128.0" layoutY="621.0" prefHeight="21.0" prefWidth="382.0" text="Kho Hàng Gì Đó Chưa Nghĩ Ra">
+            <Label layoutX="128.0" layoutY="571.0" prefHeight="21.0" prefWidth="382.0" text="Kho Hàng Gì Đó Chưa Nghĩ Ra">
                <font>
                   <Font size="15.0" />
                </font>
