@@ -12,7 +12,8 @@ public class GUILoader {
 	private Node node;
 	private Object controller;
 	
-	private static Stack<Node> previousNodes = new Stack<>();
+	private static Stack<GUILoader> previousGUIs = new Stack<>();
+	private static GUILoader currentGUI;
 	
 	public Node getNode() {
 		return node;
@@ -53,23 +54,31 @@ public class GUILoader {
 	 * Thay doi khung canh sang canh moi
 	 * @param node
 	 */
-	static public void loadToMainScene(Node node) {
-		previousNodes.push(mainNode.getCenter());
-		mainNode.setCenter(node);
+	static public void loadToScene(GUILoader guiLoader) {
+		previousGUIs.push(currentGUI);
+		mainNode.setCenter(guiLoader.getNode());
+		currentGUI = guiLoader;
 	}
 	
+	/**
+	 * Quay lai canh cu
+	 */
 	static public void loadPreviousScene() {
-		if (previousNodes.empty())
+		if (previousGUIs.empty())
 			loadMainScene();
 		else 
-			mainNode.setCenter(previousNodes.pop());
+			mainNode.setCenter(previousGUIs.pop().getNode());
+	}
+	
+	static public GUILoader getCurrentGUI() {
+		return currentGUI;
 	}
 	
 	/**
 	 * Load trang chu
 	 */
 	static public void loadMainScene() {
-		GUILoader.loadToMainScene(GUILoader.load("gui/general/MainMenu").getNode());
-		previousNodes.clear();
+		GUILoader.loadToScene(GUILoader.load("gui/general/MainMenu"));
+		previousGUIs.clear();
 	}
 }

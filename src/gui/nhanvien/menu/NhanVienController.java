@@ -32,6 +32,6 @@ public class NhanVienController {
 		GUILoader gui = GUILoader.load("gui/nhanvien/detail/GUI");
 		GUIController controller = (GUIController) gui.getController();
 		controller.initInfo("");
-		GUILoader.loadToMainScene(gui.getNode());
+		GUILoader.loadToScene(gui);
 	}
 }

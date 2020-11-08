@@ -32,6 +32,6 @@ public class ListController {
 		GUILoader gui = GUILoader.load("gui/khachhang/detail/GUI");
 		GUIController controller = (GUIController) gui.getController();
 		controller.initInfo("");
-		GUILoader.loadToMainScene(gui.getNode());
+		GUILoader.loadToScene(gui);
 	}
 }

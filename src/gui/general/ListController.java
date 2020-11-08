@@ -16,7 +16,7 @@ public class ListController {
 	
 	@FXML
 	private void onAction() {
-		GUILoader.loadToMainScene(GUILoader.load(link).getNode());
+		GUILoader.loadToScene(GUILoader.load(link));
 	}
 	
 	public void setImage(String fileName) {
