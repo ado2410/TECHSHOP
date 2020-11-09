@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="340.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="259.0" layoutY="36.0" prefHeight="21.0" prefWidth="138.0" text="Laptop HP 15s">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../DACSDL/Lấy%20Trên%20Mạng/laptop.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="414.0" layoutY="84.0" text="10.690.000 ₫">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="155.0" text="Intel UHD Graphics 620">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="191.0" text="Core i3">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="224.0" text="SSD 256 GB">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="120.0" prefHeight="30.0" prefWidth="102.0" text="Cấu Hình">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

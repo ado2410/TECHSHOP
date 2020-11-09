@@ -1,8 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.GUIController">
+   <children>
+      <HBox prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="720.0" prefWidth="339.0">
+               <children>
+                  <ImageView fx:id="imageLeft" fitHeight="250.0" fitWidth="250.0" layoutX="52.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <image>
+                        <Image url="@../../../../../../DACSDL/Lấy%20Trên%20Mạng/laptop.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane prefHeight="720.0" prefWidth="949.0">
+               <children>
+                  <Text layoutX="41.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laptop HP 15s">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="37.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10.690.000 ₫">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="43.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Màu">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <CheckBox layoutX="103.0" layoutY="221.0" mnemonicParsing="false" text="Màu " />
+                  <CheckBox layoutX="255.0" layoutY="220.0" mnemonicParsing="false" text="Màu " />
+                  <CheckBox layoutX="394.0" layoutY="220.0" mnemonicParsing="false" text="Màu " />
+                  <Text layoutX="45.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pin">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="46.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Khối Lượng">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="47.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <CheckBox layoutX="105.0" layoutY="454.0" mnemonicParsing="false" text="S" />
+                  <CheckBox layoutX="255.0" layoutY="454.0" mnemonicParsing="false" text="M" />
+                  <CheckBox layoutX="400.0" layoutY="454.0" mnemonicParsing="false" text="X" />
+                  <CheckBox layoutX="547.0" layoutY="454.0" mnemonicParsing="false" text="XL" />
+                  <CheckBox layoutX="105.0" layoutY="401.0" mnemonicParsing="false" text="S" />
+                  <CheckBox layoutX="255.0" layoutY="400.0" mnemonicParsing="false" text="M" />
+                  <CheckBox layoutX="398.0" layoutY="401.0" mnemonicParsing="false" text="X" />
+                  <CheckBox layoutX="105.0" layoutY="289.0" mnemonicParsing="false" text="S" />
+                  <CheckBox layoutX="254.0" layoutY="289.0" mnemonicParsing="false" text="M" />
+                  <CheckBox layoutX="397.0" layoutY="288.0" mnemonicParsing="false" text="X" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>
-

@@ -146,12 +146,12 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="57.0" layoutY="516.0" text="Bộ Phận Quản Lý">
+            <Label layoutX="57.0" layoutY="516.0" text="Bộ Phận Công Việc">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="128.0" layoutY="571.0" prefHeight="21.0" prefWidth="382.0" text="Kho Hàng Gì Đó Chưa Nghĩ Ra">
+            <Label layoutX="128.0" layoutY="571.0" prefHeight="21.0" prefWidth="382.0" text="công việc làm bên kho hàg">
                <font>
                   <Font size="15.0" />
                </font>
