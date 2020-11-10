@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.GUIController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhacungcap.detail.GUIController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="340.0">
          <children>
-            <ImageView fitHeight="201.0" fitWidth="200.0" layoutX="70.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+            <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="70.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
                <image>
-                  <Image url="@../../../../../../DACSDL/Lấy%20Trên%20Mạng/download.png" />
+                  <Image url="@../../../../images/general/Company.png" />
                </image>
             </ImageView>
-            <Text fx:id="nameLeft" layoutX="18.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên NCC" textAlignment="CENTER" wrappingWidth="304.6666564941406" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="17.333343505859375">
+            <Text fx:id="nameLeft" layoutX="18.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên NCC" textAlignment="CENTER" wrappingWidth="304.6666564941406" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -27,27 +31,39 @@
       </AnchorPane>
       <AnchorPane prefHeight="720.0" prefWidth="1114.0">
          <children>
-            <Label layoutX="167.0" layoutY="110.0" text="Chi Nhánh" />
+            <GridPane layoutX="44.0" layoutY="103.0" prefWidth="738.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="id" editable="false" text="mít tơ giang" GridPane.columnIndex="1" />
+                  <Label text="Tên Nhà Cung Cấp" GridPane.rowIndex="1" />
+                  <TextField fx:id="nameRight" editable="false" text="Nhà Cung Cấp HG" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Mã Nhà Cung Cấp" />
+                  <Label text="Địa Chỉ" GridPane.rowIndex="2" />
+                  <TextField fx:id="address" editable="false" text="TP- KonTum" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Điện Thọau" GridPane.rowIndex="3" />
+                  <TextField fx:id="phone" editable="false" text="01230123" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Email" GridPane.rowIndex="4" />
+                  <TextField fx:id="email" editable="false" text="123@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="267.0" text="Giới thiệu" GridPane.rowIndex="5" />
+                  <TextArea fx:id="description" editable="false" prefHeight="15.0" prefWidth="205.0" text="Thông tin giới thiệu tại đây" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
             <Label layoutX="44.0" layoutY="57.0" text="Chii Tiết NCC">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="167.0" layoutY="148.0" text="Nhóm Nhà Cung Cấp" />
-            <Label layoutX="167.0" layoutY="187.0" text="Mã Nhà Cung Cấp" />
-            <Label layoutX="167.0" layoutY="223.0" text="Tên Nhà Cung Cấp" />
-            <Label layoutX="167.0" layoutY="294.0" text="Điện Thọau" />
-            <Label layoutX="167.0" layoutY="330.0" text="Email" />
-            <Label layoutX="167.0" layoutY="365.0" text="Mã Số Thuê" />
-            <Label layoutX="167.0" layoutY="258.0" text="Địa Chỉ" />
-            <TextField layoutX="298.0" layoutY="106.0" text="Cửa Hàng" />
-            <TextField layoutX="298.0" layoutY="144.0" text="KonTum" />
-            <TextField layoutX="298.0" layoutY="183.0" text="mít tơ giang" />
-            <TextField layoutX="298.0" layoutY="219.0" text="Nhà Cung Cấp HG" />
-            <TextField layoutX="298.0" layoutY="254.0" text="TP- KonTum" />
-            <TextField layoutX="298.0" layoutY="290.0" text="01230123" />
-            <TextField layoutX="298.0" layoutY="326.0" text="123@gmail.com" />
-            <TextField layoutX="298.0" layoutY="361.0" text="123" />
          </children>
       </AnchorPane>
    </children>

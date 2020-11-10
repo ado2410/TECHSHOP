@@ -4,75 +4,84 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="100.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane prefHeight="100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhacungcap.menu.NhaCungCapController">
    <children>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="53.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+      <Button mnemonicParsing="false" onAction="#onAction" prefHeight="103.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" layoutX="45.0" layoutY="3.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../DACSDL/Lấy%20Trên%20Mạng/download.png" />
+            <Image url="@../../../../images/general/Company.png" />
          </image>
       </ImageView>
-      <HBox layoutX="227.0" layoutY="3.0" prefHeight="35.0" prefWidth="756.0" spacing="10.0">
+      <GridPane layoutX="187.0" layoutY="32.0" mouseTransparent="true" vgap="25.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Mã">
+            <Button mnemonicParsing="false" mouseTransparent="true" prefHeight="25.0" prefWidth="140.0" text="Tên" GridPane.columnIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Tên">
+            <Button mnemonicParsing="false" mouseTransparent="true" prefHeight="25.0" prefWidth="140.0" text="Địa chỉ" GridPane.columnIndex="2">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="150.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Địa chỉ">
+            <Button mnemonicParsing="false" mouseTransparent="true" prefHeight="25.0" prefWidth="140.0" text="Mã">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="290.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Điện Thoại">
+            <Button mnemonicParsing="false" mouseTransparent="true" prefHeight="25.0" prefWidth="140.0" text="Điện Thoại" GridPane.columnIndex="3">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="430.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Email">
+            <Button mnemonicParsing="false" mouseTransparent="true" prefHeight="25.0" prefWidth="140.0" text="Email" GridPane.columnIndex="4">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-         </children>
-      </HBox>
-      <HBox layoutX="225.0" layoutY="77.0" prefHeight="49.0" prefWidth="727.0" spacing="45.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="013123" textAlignment="CENTER" wrappingWidth="108.80339050292969">
+            <Text fx:id="id" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="013123" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NCC-konTum" textAlignment="CENTER" wrappingWidth="108.80339050292969">
+            <Text fx:id="name" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="NCC-konTum" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="119.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TP-KonTum" textAlignment="CENTER" wrappingWidth="108.80339050292969">
+            <Text fx:id="address" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="TP-KonTum" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="228.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="012345678" textAlignment="CENTER" wrappingWidth="108.80339050292969">
+            <Text fx:id="phone" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="012345678" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="337.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ncc@gmail.com" textAlignment="CENTER" wrappingWidth="108.80339050292969">
+            <Text fx:id="email" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="ncc@gmail.com" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
          </children>
-      </HBox>
+      </GridPane>
    </children>
 </AnchorPane>

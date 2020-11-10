@@ -44,7 +44,7 @@ public class GUIController implements Initializable {
 			elementController.setImage("Avatar.png");
 			elementController.setName("Hello");
 			
-			grid.add(element, col+1, row);
+			grid.add(element, col, row);
 			
 			col++;
 			if (col >= colPerRow) {

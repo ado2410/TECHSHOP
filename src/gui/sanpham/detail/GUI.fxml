@@ -1,78 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.GUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.detail.GUIController">
    <children>
-      <HBox prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="720.0" prefWidth="339.0">
+            <Label fx:id="name" text="Tên sản phẩm">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="40.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="720.0" prefWidth="1280.0">
                <children>
-                  <ImageView fx:id="imageLeft" fitHeight="250.0" fitWidth="250.0" layoutX="52.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-                     <image>
-                        <Image url="@../../../../../../DACSDL/Lấy%20Trên%20Mạng/laptop.jpg" />
-                     </image>
-                  </ImageView>
+                  <AnchorPane prefHeight="630.0" prefWidth="404.0">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="250.0" fitWidth="250.0" layoutX="60.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+                           <image>
+                              <Image url="@../../../../images/general/Product.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="720.0" prefWidth="949.0">
+                     <children>
+                        <VBox layoutX="57.0" layoutY="-52.0" prefHeight="630.0" prefWidth="910.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="10.690.000 ₫">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Text>
+                              <Separator layoutX="10.0" layoutY="46.0" prefWidth="200.0" />
+                              <VBox layoutX="10.0" layoutY="46.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kích thước">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Dài" />
+                                          <Label text="Cao" GridPane.columnIndex="2" />
+                                          <Label layoutX="10.0" layoutY="10.0" text="Rộng" GridPane.columnIndex="1" />
+                                          <Label fx:id="length" layoutX="10.0" layoutY="10.0" text="Dài" GridPane.rowIndex="1" />
+                                          <Label fx:id="wide" layoutX="302.0" layoutY="10.0" text="Rộng" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="height" text="Cao" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                              <Separator layoutX="10.0" layoutY="91.0" prefWidth="200.0" />
+                              <VBox layoutX="10.0" layoutY="90.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Màu">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Label fx:id="color" text="Label" />
+                                 </children>
+                              </VBox>
+                              <Separator layoutX="10.0" layoutY="138.0" prefWidth="200.0" />
+                              <VBox layoutX="10.0" layoutY="140.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thời lượng pin">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Label fx:id="battery" text="Label" />
+                                 </children>
+                              </VBox>
+                              <Separator layoutX="10.0" layoutY="355.0" prefWidth="200.0" />
+                              <VBox layoutX="10.0" layoutY="378.0" prefWidth="100.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Khối lượng">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Label fx:id="weight" text="Label" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
                </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </AnchorPane>
-            <AnchorPane prefHeight="720.0" prefWidth="949.0">
-               <children>
-                  <Text layoutX="41.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laptop HP 15s">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="37.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10.690.000 ₫">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="43.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Màu">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <CheckBox layoutX="103.0" layoutY="221.0" mnemonicParsing="false" text="Màu " />
-                  <CheckBox layoutX="255.0" layoutY="220.0" mnemonicParsing="false" text="Màu " />
-                  <CheckBox layoutX="394.0" layoutY="220.0" mnemonicParsing="false" text="Màu " />
-                  <Text layoutX="45.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pin">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="46.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Khối Lượng">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="47.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <CheckBox layoutX="105.0" layoutY="454.0" mnemonicParsing="false" text="S" />
-                  <CheckBox layoutX="255.0" layoutY="454.0" mnemonicParsing="false" text="M" />
-                  <CheckBox layoutX="400.0" layoutY="454.0" mnemonicParsing="false" text="X" />
-                  <CheckBox layoutX="547.0" layoutY="454.0" mnemonicParsing="false" text="XL" />
-                  <CheckBox layoutX="105.0" layoutY="401.0" mnemonicParsing="false" text="S" />
-                  <CheckBox layoutX="255.0" layoutY="400.0" mnemonicParsing="false" text="M" />
-                  <CheckBox layoutX="398.0" layoutY="401.0" mnemonicParsing="false" text="X" />
-                  <CheckBox layoutX="105.0" layoutY="289.0" mnemonicParsing="false" text="S" />
-                  <CheckBox layoutX="254.0" layoutY="289.0" mnemonicParsing="false" text="M" />
-                  <CheckBox layoutX="397.0" layoutY="288.0" mnemonicParsing="false" text="X" />
-               </children>
-            </AnchorPane>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="340.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="279.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.SanPhamController">
    <children>
-      <Label layoutX="259.0" layoutY="36.0" prefHeight="21.0" prefWidth="138.0" text="Laptop HP 15s">
+      <Button mnemonicParsing="false" onAction="#onAction" prefHeight="288.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label fx:id="name" layoutX="259.0" layoutY="36.0" mouseTransparent="true" prefHeight="21.0" prefWidth="138.0" text="Laptop HP 15s">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="32.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../DACSDL/Lấy%20Trên%20Mạng/laptop.jpg" />
+            <Image url="@../../../../images/general/Product.png" />
          </image>
       </ImageView>
-      <Label layoutX="414.0" layoutY="84.0" text="10.690.000 ₫">
+      <Label fx:id="price" layoutX="414.0" layoutY="84.0" mouseTransparent="true" text="10.690.000 ₫" AnchorPane.rightAnchor="30.0">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="155.0" text="Intel UHD Graphics 620">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="191.0" text="Core i3">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="224.0" text="SSD 256 GB">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="120.0" prefHeight="30.0" prefWidth="102.0" text="Cấu Hình">
+      <Label layoutX="259.0" layoutY="120.0" mouseTransparent="true" prefHeight="30.0" prefWidth="102.0" text="Cấu Hình">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
+      <VBox layoutX="259.0" layoutY="161.0" mouseTransparent="true" spacing="10.0">
+         <children>
+            <Label fx:id="spec1" mouseTransparent="true" text="Intel UHD Graphics 620">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="spec2" mouseTransparent="true" text="Core i3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="spec3" mouseTransparent="true" text="SSD 256 GB">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
