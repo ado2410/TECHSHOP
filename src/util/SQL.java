@@ -39,7 +39,7 @@ public class SQL {
 	}
 	
 	/**
-	 * Cap nhat co so du lieu, dung voi cac lenh nhu update, insert, delete...
+	 * Cap nhat co so du lieu, dung voi cac lenh nhu .update, insert, delete..
 	 * @param command
 	 */
 	public static void update(String command) {

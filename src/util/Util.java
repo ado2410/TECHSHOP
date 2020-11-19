@@ -14,7 +14,7 @@ public class Util {
 			input = new FileInputStream(fullPath);
 			return new Image(input, width, height, false, false);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.out.print("Image path doesn't exist!");
 		}
 		return null;
 	}

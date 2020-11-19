@@ -1,6 +1,7 @@
 package gui.loaisanpham;
 
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import util.GUILoader;
@@ -14,7 +15,7 @@ public class LoaiSanPhamController {
 	
 	@FXML
 	private void onAction() {
-		GUILoader.loadToScene(GUILoader.load("gui/sanpham/detail/GUI"));
+		GUILoader.loadToScene(GUILoader.load("gui/sanpham/menu/GUI"));
 	}
 	
 	public void setName(String name) {
@@ -22,6 +23,10 @@ public class LoaiSanPhamController {
 	}
 	
 	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 150, 150));
+		Image image = Util.loadImage("khachhang/" + fileName, 100, 100);
+		if (image != null)
+			this.image.setImage(image);
+		else
+			this.image.setImage(Util.loadImage("general/Avatar.png", 100, 100));
 	}
 }

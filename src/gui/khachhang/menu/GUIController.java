@@ -1,6 +1,8 @@
-package gui.khachhang.menu;
+	package gui.khachhang.menu;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -9,21 +11,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import util.GUILoader;
+import util.SQL;
 
 public class GUIController implements Initializable {
 	@FXML
 	private GridPane list;
-	
 	@FXML
 	private TextField filter;
+	@FXML
+	private void onFilterAction() {
+		initList(filter.getText());
+	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		initList();
-		
-		filter.textProperty().addListener((observable, oldValue, newValue) -> {
-		    initList(newValue);
-		});
 	}
 	
 	private void initList() {
@@ -31,29 +33,37 @@ public class GUIController implements Initializable {
 	}
 	
 	private void initList(String filter) {
-		list.getChildren().clear();
-		
-		int number = 14;
-		int colPerRow = 4;
-		int row = 0;
-		int col = 0;
-		
-		while(col + row*colPerRow < number) {
-			GUILoader gui = GUILoader.load("gui/khachhang/menu/List");
+		try {
+			list.getChildren().clear();
+			ResultSet result = SQL.query("SELECT ID, TEN FROM KHACHHANG WHERE TEN LIKE N'%" + filter + "%'");
+			int colPerRow = 4;
+			int row = 0;
+			int col = 0;
 			
-			AnchorPane element = (AnchorPane) gui.getNode();
-			ListController elementController = (ListController) gui.getController();
-			elementController.setImage("Avatar.png");
-			elementController.setName("Hello");
-			elementController.setGmail("1234@gmail.com");
-			
-			list.add(element, col+1, row);
-			
-			col++;
-			if (col >= colPerRow) {
-				col = 0;
-				row++;
+			while(result.next()) {
+				try {
+					GUILoader gui = GUILoader.load("gui/khachhang/menu/List");
+					
+					AnchorPane element = (AnchorPane) gui.getNode();
+					ListController elementController = (ListController) gui.getController();
+					
+					elementController.setImage(result.getString("ID") + ".png");
+					elementController.setName(result.getString("TEN"));
+					elementController.setId(result.getString("ID"));
+					
+					list.add(element, col+1, row);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+				col++;
+				if (col >= colPerRow) {
+					col = 0;
+					row++;
+				}
 			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
 		}
 	}
 }

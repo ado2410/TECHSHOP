@@ -71,9 +71,9 @@
                                           <Label text="Dài" />
                                           <Label text="Cao" GridPane.columnIndex="2" />
                                           <Label layoutX="10.0" layoutY="10.0" text="Rộng" GridPane.columnIndex="1" />
-                                          <Label fx:id="length" layoutX="10.0" layoutY="10.0" text="Dài" GridPane.rowIndex="1" />
-                                          <Label fx:id="wide" layoutX="302.0" layoutY="10.0" text="Rộng" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label fx:id="height" text="Cao" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label fx:id="width" layoutX="10.0" layoutY="10.0" text="Dài" GridPane.rowIndex="1" />
+                                          <Label fx:id="height" layoutX="302.0" layoutY="10.0" text="Rộng" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="depth" text="Cao" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                        </children>
                                     </GridPane>
                                  </children>

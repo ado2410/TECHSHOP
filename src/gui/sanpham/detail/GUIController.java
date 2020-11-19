@@ -12,9 +12,9 @@ public class GUIController {
 	@FXML
 	private Text price;
 	@FXML
-	private Label length;
+	private Label depth;
 	@FXML
-	private Label wide;
+	private Label width;
 	@FXML
 	private Label height;
 	@FXML

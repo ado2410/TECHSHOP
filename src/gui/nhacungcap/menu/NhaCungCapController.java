@@ -1,5 +1,6 @@
 package gui.nhacungcap.menu;
 
+import gui.nhacungcap.detail.GUIController;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -21,8 +22,11 @@ public class NhaCungCapController {
 	private Text email;
 	
 	@FXML
-	private void onAction() {
-		GUILoader.loadToScene(GUILoader.load("gui/nhacungcap/detail/GUI"));
+	private void onDetailAction() {
+		GUILoader gui = GUILoader.load("gui/nhacungcap/detail/GUI");
+		GUIController controller = (GUIController) gui.getController();
+		controller.initInfo(this.id.getText());
+		GUILoader.loadToScene(gui);
 	}
 	
 	public void setImage(String fileName) {

@@ -19,7 +19,8 @@
             <Image url="@../../../../images/general/Avatar.png" />
          </image>
       </ImageView>
-      <Text fx:id="name" layoutX="5.0" layoutY="167.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên Nhân Viên" textAlignment="CENTER" wrappingWidth="189.13671875" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.86328125" />
-      <Text fx:id="position" layoutX="5.0" layoutY="199.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Chức Vụ" textAlignment="CENTER" wrappingWidth="189.13671875" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.86328125" />
+      <Text fx:id="name" layoutX="8.0" layoutY="196.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên Nhân Viên" textAlignment="CENTER" wrappingWidth="189.13671875" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="2.86328125" />
+      <Text fx:id="position" layoutX="5.0" layoutY="227.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Chức Vụ" textAlignment="CENTER" wrappingWidth="189.13671875" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.86328125" />
+      <Text fx:id="id" layoutX="8.0" layoutY="167.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="CENTER" wrappingWidth="189.13671875" />
    </children>
 </AnchorPane>
