@@ -55,7 +55,8 @@ public class GUILoader {
 	 * @param node
 	 */
 	static public void loadToScene(GUILoader guiLoader) {
-		previousGUIs.push(currentGUI);
+		if (currentGUI != null)
+			previousGUIs.push(currentGUI);
 		mainNode.setCenter(guiLoader.getNode());
 		currentGUI = guiLoader;
 	}
@@ -66,8 +67,11 @@ public class GUILoader {
 	static public void loadPreviousScene() {
 		if (previousGUIs.empty())
 			loadMainScene();
-		else 
-			mainNode.setCenter(previousGUIs.pop().getNode());
+		else {
+			GUILoader prev = previousGUIs.pop();
+			mainNode.setCenter(prev.getNode());
+			currentGUI = prev;
+		}
 	}
 	
 	static public GUILoader getCurrentGUI() {

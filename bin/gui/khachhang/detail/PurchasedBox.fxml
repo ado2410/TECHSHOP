@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="53.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.PurchasedBoxController">
    <children>
       <Button minWidth="500.0" mnemonicParsing="false" onAction="#onAction" prefHeight="71.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <ImageView fx:id="image" fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0">
+      <ImageView fx:id="image" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="2.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0">
          <image>
             <Image url="@../../../../images/general/Avatar.png" />
          </image>

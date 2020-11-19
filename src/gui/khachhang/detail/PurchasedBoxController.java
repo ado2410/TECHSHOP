@@ -21,7 +21,7 @@ public class PurchasedBoxController {
 	}
 	
 	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 50, 50));
+		this.image.setImage(Util.loadImage("khachhang/" + fileName + ".png", 50, 50, "general/Purchased.png"));
 	}
 	
 	public void setId(String id) {

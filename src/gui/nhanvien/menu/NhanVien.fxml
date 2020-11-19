@@ -14,7 +14,7 @@
             <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
          </padding>
       </Button>
-      <ImageView fx:id="image" fitHeight="107.0" fitWidth="113.0" layoutX="47.0" layoutY="26.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="30.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/general/Avatar.png" />
          </image>

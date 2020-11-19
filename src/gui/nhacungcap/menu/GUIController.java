@@ -40,7 +40,7 @@ public class GUIController implements Initializable {
 					AnchorPane element = (AnchorPane) gui.getNode();
 					NhaCungCapController elementController = (NhaCungCapController) gui.getController();
 					
-					elementController.setImage(result.getString("ID") + ".png");
+					elementController.setImage(result.getString("ID"));
 					elementController.setName(result.getString("TEN"));
 					elementController.setId(result.getString("ID"));
 					elementController.setAddress(result.getString("DIACHI"));

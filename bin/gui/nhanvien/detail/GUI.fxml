@@ -20,7 +20,7 @@
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="340.0">
          <children>
-            <ImageView fx:id="avatar" fitHeight="201.0" fitWidth="200.0" layoutX="70.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+            <ImageView fx:id="avatar" fitHeight="200.0" fitWidth="200.0" layoutX="70.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
                <image>
                   <Image url="@../../../../images/general/Avatar.png" />
                </image>

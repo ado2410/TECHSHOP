@@ -2,7 +2,6 @@ package gui.nhanvien.detail;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import util.Util;
 
@@ -17,11 +16,7 @@ public class SoldListController {
 	private Label price;
 	
 	public void setImage(String fileName) {
-		Image image = Util.loadImage("khachhang/" + fileName, 100, 100);
-		if (image != null)
-			this.image.setImage(image);
-		else
-			this.image.setImage(Util.loadImage("general/Avatar.png", 50, 50));
+		this.image.setImage(Util.loadImage("nhanvien/" + fileName + ".png", 50, 50, "general/Bill.png"));
 	}
 	
 	public void setId(String id) {

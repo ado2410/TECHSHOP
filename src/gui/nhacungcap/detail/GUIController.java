@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import util.SQL;
+import util.Util;
 
 public class GUIController implements Initializable {
 	@FXML
@@ -39,6 +40,7 @@ public class GUIController implements Initializable {
 		try {
 			ResultSet result = SQL.query("SELECT * FROM NHACUNGCAP WHERE ID = '" + id + "'");
 			result.next();
+			this.image.setImage(Util.loadImage("nhacungcap/" + result.getString("ID") + ".png", 200, 200, "general/Company.png"));
 			this.id.setText(result.getString("ID"));
 			this.nameLeft.setText(result.getString("TEN"));
 			this.nameRight.setText(result.getString("TEN"));

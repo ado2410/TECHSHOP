@@ -1,7 +1,6 @@
 package gui.khachhang.menu;
 
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import util.GUILoader;
@@ -17,11 +16,7 @@ public class ListController {
 	private Text id;
 	
 	public void setImage(String fileName) {
-		Image image = Util.loadImage("khachhang/" + fileName, 100, 100);
-		if (image != null)
-			this.image.setImage(image);
-		else
-			this.image.setImage(Util.loadImage("general/Avatar.png", 100, 100));
+		this.image.setImage(Util.loadImage("nhanvien/" + fileName + ".png", 100, 100, "general/Avatar.png"));
 	}
 	
 	public void setName(String name) {

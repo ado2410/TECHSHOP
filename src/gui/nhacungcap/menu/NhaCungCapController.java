@@ -30,7 +30,7 @@ public class NhaCungCapController {
 	}
 	
 	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 200, 200));
+		this.image.setImage(Util.loadImage("nhacungcap/" + fileName + ".png", 100, 100, "general/Company.png"));
 	}
 	
 	public void setId(String id) {

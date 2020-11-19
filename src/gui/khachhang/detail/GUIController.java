@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import util.GUILoader;
 import util.SQL;
+import util.Util;
 
 public class GUIController implements Initializable {
 	@FXML
@@ -72,6 +73,7 @@ public class GUIController implements Initializable {
 		try {
 			ResultSet result = SQL.query("SELECT * FROM KHACHHANG WHERE ID = '" + id + "'");
 			result.next();
+			this.imageLeft.setImage(Util.loadImage("khachhang/" + result.getString("ID") + ".png", 200, 200, "general/Avatar.png"));
 			this.id.setText(result.getString("ID"));
 			this.nameLeft.setText(result.getString("TEN"));
 			this.name.setText(result.getString("TEN"));

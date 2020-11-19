@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import util.GUILoader;
 import util.SQL;
+import util.Util;
 
 public class GUIController implements Initializable{
 	@FXML
@@ -76,8 +77,9 @@ public class GUIController implements Initializable{
 	public void initInfo(String id) {
 		//Khoi tao cac thong tin co ban
 		try {
-			ResultSet result = SQL.query("select * from NHANVIEN INNER JOIN CONGVIEC ON NHANVIEN.CONGVIEC = CONGVIEC.ID WHERE NHANVIEN.ID = '" + id + "'");
+			ResultSet result = SQL.query("SELECT * FROM NHANVIEN INNER JOIN CONGVIEC ON NHANVIEN.CONGVIEC = CONGVIEC.ID WHERE NHANVIEN.ID = '" + id + "'");
 			result.next();
+			this.avatar.setImage(Util.loadImage("nhanvien/" + result.getString("ID") + ".png", 200, 200, "general/Avatar.png"));
 			this.id.setText(result.getString("ID"));
 			this.nameLeft.setText(result.getString("TEN"));
 			this.name.setText(result.getString("TEN"));

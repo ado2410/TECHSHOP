@@ -1,14 +1,20 @@
 package gui.sanpham.detail;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import util.SQL;
 import util.Util;
 
 public class GUIController {
 	@FXML
 	private Label name;
+	@FXML
+	private Label id;
 	@FXML
 	private Text price;
 	@FXML
@@ -26,7 +32,23 @@ public class GUIController {
 	@FXML
 	private ImageView image;
 	
-	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 200, 200));
+	public void initInfo(String id) {
+		try {
+			ResultSet result = SQL.query("SELECT SANPHAM.ID AS ID, SANPHAM.TEN AS TEN, GIA, CAO, DAI, RONG, MAU.TEN AS MAU, KHOILUONG FROM SANPHAM INNER JOIN MAU ON SANPHAM.MAU = MAU.ID WHERE SANPHAM.ID = '" + id + "'");
+			result.next();
+			this.image.setImage(Util.loadImage("sanpham/" + result.getString("ID") + ".png", 250, 250, "general/Product.png"));
+			this.id.setText(result.getString("ID"));
+			this.id.setText(result.getString("ID"));
+			this.name.setText(result.getString("TEN"));
+			this.price.setText(result.getString("GIA"));
+			this.depth.setText(result.getString("CAO"));
+			this.width.setText(result.getString("DAI"));
+			this.height.setText(result.getString("RONG"));
+			this.color.setText(result.getString("MAU"));
+			this.weight.setText(result.getString("KHOILUONG"));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

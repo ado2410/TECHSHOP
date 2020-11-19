@@ -18,4 +18,12 @@ public class Util {
 		}
 		return null;
 	}
+	
+	public static Image loadImage(String path, int width, int height, String defaultPath) {
+		Image image = loadImage(path, width, height);
+		if (image != null)
+			return image;
+		else
+			return loadImage(defaultPath, width, height);
+	}
 }

@@ -1,5 +1,6 @@
 package gui.sanpham.menu;
 
+import gui.sanpham.detail.GUIController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -20,9 +21,18 @@ public class SanPhamController {
 	@FXML
 	private Label spec3;
 	
+	private String id;
+	
 	@FXML
-	private void onAction() {
-		GUILoader.loadToScene(GUILoader.load("gui/sanpham/detail/GUI"));
+	private void onDetailAction() {
+		GUILoader gui = GUILoader.load("gui/sanpham/detail/GUI");
+		GUIController controller = (GUIController) gui.getController();
+		controller.initInfo(id);
+		GUILoader.loadToScene(gui);
+	}
+	
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public void setName(String name) {
@@ -34,6 +44,6 @@ public class SanPhamController {
 	}
 	
 	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 200, 200));
+		this.image.setImage(Util.loadImage("sanpham/" + fileName + ".png", 150, 150, "general/Product.png"));
 	}
 }

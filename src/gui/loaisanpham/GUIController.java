@@ -47,7 +47,7 @@ public class GUIController implements Initializable {
 					AnchorPane element = (AnchorPane) gui.getNode();
 					LoaiSanPhamController elementController = (LoaiSanPhamController) gui.getController();
 					
-					elementController.setImage(result.getString("ID") + ".png");
+					elementController.setImage(result.getString("ID"));
 					elementController.setName(result.getString("TEN"));
 					
 					grid.add(element, col+1, row);
