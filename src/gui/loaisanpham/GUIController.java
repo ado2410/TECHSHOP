@@ -36,7 +36,7 @@ public class GUIController implements Initializable {
 		try {
 			grid.getChildren().clear();
 			ResultSet result = SQL.query("SELECT ID, TEN FROM LOAISANPHAM WHERE TEN LIKE N'%" + filter + "%'");
-			int colPerRow = 4;
+			int colPerRow = 5;
 			int row = 0;
 			int col = 0;
 			
@@ -50,7 +50,7 @@ public class GUIController implements Initializable {
 					elementController.setImage(result.getString("ID"));
 					elementController.setName(result.getString("TEN"));
 					
-					grid.add(element, col+1, row);
+					grid.add(element, col, row);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

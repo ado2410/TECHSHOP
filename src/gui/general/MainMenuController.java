@@ -21,6 +21,7 @@ public class MainMenuController implements Initializable {
 	private void initMenuList() {
 		String[] names = {"Thêm hóa đơn", "Khách hàng", "Nhân viên", "Loại sản phẩm", "Sản phẩm", "Nhà cung cấp", "Công việc", "Hóa đơn"};
 		String[] paths = {"gui/hoadon/add/GUI", "gui/khachhang/menu/GUI", "gui/nhanvien/menu/GUI", "gui/loaisanpham/GUI", "gui/sanpham/menu/GUI", "gui/nhacungcap/menu/GUI", "gui/congviec/menu/GUI", "gui/hoadon/menu/GUI"};
+		String[] images = {"AddBill", "Customer", "Employee", "ProductCategory", "Product", "Company", "Job", "Bill"};
 		grid.getChildren().clear();
 		
 		int number = names.length;
@@ -34,6 +35,7 @@ public class MainMenuController implements Initializable {
 			ListController controller = (ListController) gui.getController();
 			controller.setName(names[col + row*colPerRow]);
 			controller.setLink(paths[col + row*colPerRow]);
+			controller.setImage(images[col + row*colPerRow]);
 			
 			grid.add(node, col, row);
 			

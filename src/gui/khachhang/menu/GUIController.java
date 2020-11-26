@@ -36,7 +36,7 @@ public class GUIController implements Initializable {
 		try {
 			list.getChildren().clear();
 			ResultSet result = SQL.query("SELECT ID, TEN FROM KHACHHANG WHERE TEN LIKE N'%" + filter + "%'");
-			int colPerRow = 4;
+			int colPerRow = 5;
 			int row = 0;
 			int col = 0;
 			
@@ -51,7 +51,7 @@ public class GUIController implements Initializable {
 					elementController.setName(result.getString("TEN"));
 					elementController.setId(result.getString("ID"));
 					
-					list.add(element, col+1, row);
+					list.add(element, col, row);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

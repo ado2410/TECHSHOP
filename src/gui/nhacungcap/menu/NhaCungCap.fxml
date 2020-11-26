@@ -14,7 +14,7 @@
 <AnchorPane prefHeight="100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhacungcap.menu.NhaCungCapController">
    <children>
       <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="103.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="2.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="50.0" fitWidth="50.0" layoutX="27.0" layoutY="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/general/Company.png" />
          </image>

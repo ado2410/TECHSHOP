@@ -37,7 +37,7 @@ public class GUIController implements Initializable {
 		try {
 			list.getChildren().clear();
 			ResultSet result = SQL.query("SELECT NHANVIEN.ID, NHANVIEN.TEN AS NVTEN, CONGVIEC.TEN AS CVTEN FROM NHANVIEN INNER JOIN CONGVIEC ON NHANVIEN.CONGVIEC = CONGVIEC.ID WHERE NHANVIEN.TEN LIKE N'%" + filter + "%'");
-			int colPerRow = 4;
+			int colPerRow = 5;
 			int row = 0;
 			int col = 0;
 			
@@ -53,7 +53,7 @@ public class GUIController implements Initializable {
 					elementController.setId(result.getString("ID"));
 					elementController.setPosition(result.getString("CVTEN"));
 					
-					list.add(element, col+1, row);
+					list.add(element, col, row);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

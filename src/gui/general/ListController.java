@@ -20,7 +20,7 @@ public class ListController {
 	}
 	
 	public void setImage(String fileName) {
-		image.setImage(Util.loadImage("general/" + fileName, 200, 200));
+		this.image.setImage(Util.loadImage("main/" + fileName + ".png", 200, 200, "general/MainMenu.png"));
 	}
 	
 	public void setName(String name) {
