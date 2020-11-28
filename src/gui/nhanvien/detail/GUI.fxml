@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.GUIController">
+<HBox prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.GUIController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="340.0">
          <children>
@@ -44,7 +44,7 @@
       </AnchorPane>
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="720.0" prefWidth="929.0">
          <content>
-            <VBox fx:id="container" prefHeight="200.0">
+            <VBox fx:id="container">
                <children>
                   <VBox fx:id="infoContainer" spacing="10.0">
                      <children>
@@ -53,7 +53,7 @@
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <GridPane fx:id="infoGrid" hgap="10.0" prefWidth="883.0" vgap="10.0">
+                        <GridPane fx:id="infoGrid" hgap="10.0" prefHeight="263.0" prefWidth="907.0" vgap="20.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -71,60 +71,60 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label text="Tên nhân viên" GridPane.rowIndex="2">
+                              <Label text="Tên nhân viên" GridPane.rowIndex="2" />
+                              <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên" wrappingWidth="368.68682861328125" GridPane.rowIndex="3">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên" wrappingWidth="368.68682861328125" GridPane.rowIndex="3" />
-                              <Label layoutX="10.0" layoutY="25.0" text="Giới tính" GridPane.columnIndex="1">
+                              </Text>
+                              <Label layoutX="10.0" layoutY="25.0" text="Giới tính" GridPane.columnIndex="1" />
+                              <Text fx:id="gender" layoutX="10.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nam/ Nữ" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="gender" layoutX="10.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nam/ Nữ" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label layoutX="395.0" layoutY="29.0" text="Số Điện Thoại" GridPane.rowIndex="4">
+                              </Text>
+                              <Label layoutX="395.0" layoutY="29.0" text="Số Điện Thoại" GridPane.rowIndex="4" />
+                              <Text fx:id="phoneNumber" layoutX="395.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000000" GridPane.rowIndex="5">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="phoneNumber" layoutX="395.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000000" GridPane.rowIndex="5" />
-                              <Label layoutX="10.0" layoutY="135.0" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              </Text>
+                              <Label layoutX="10.0" layoutY="135.0" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text fx:id="email" layoutX="10.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dasds@gmailc.om" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="email" layoutX="10.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dasds@gmailc.om" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label layoutX="395.0" layoutY="114.0" text="Quốc Tịch" GridPane.rowIndex="6">
+                              </Text>
+                              <Label layoutX="395.0" layoutY="114.0" text="Quốc Tịch" GridPane.rowIndex="6" />
+                              <Text fx:id="country" layoutX="395.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Việt Nôm" GridPane.rowIndex="7">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="country" layoutX="395.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Việt Nôm" GridPane.rowIndex="7" />
-                              <Label layoutX="395.0" layoutY="173.0" text="Địa Chỉ" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              </Text>
+                              <Label layoutX="395.0" layoutY="173.0" text="Địa Chỉ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Text fx:id="address" layoutX="395.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ở MÔ AI BIẾT" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="address" layoutX="395.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ở MÔ AI BIẾT" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Label layoutX="10.0" layoutY="108.0" text="ID">
+                              </Text>
+                              <Label layoutX="10.0" layoutY="108.0" text="ID" />
+                              <Text fx:id="id" layoutX="10.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="368.68682861328125" GridPane.rowIndex="1">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="id" layoutX="10.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="368.68682861328125" GridPane.rowIndex="1" />
-                              <Label layoutX="10.0" layoutY="195.0" text="Ngày làm việc" GridPane.rowIndex="8">
+                              </Text>
+                              <Label layoutX="10.0" layoutY="195.0" text="Ngày làm việc" GridPane.rowIndex="8" />
+                              <Text fx:id="workingDate" layoutX="10.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.rowIndex="9">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="workingDate" layoutX="10.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.rowIndex="9" />
-                              <Label layoutX="10.0" layoutY="255.0" text="Ngày sinh" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                              </Text>
+                              <Label layoutX="10.0" layoutY="255.0" text="Ngày sinh" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Text fx:id="dob" layoutX="10.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="16.0" />
                                  </font>
-                              </Label>
-                              <Text fx:id="dob" layoutX="10.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              </Text>
                            </children>
                         </GridPane>
                         <Separator prefWidth="200.0" />

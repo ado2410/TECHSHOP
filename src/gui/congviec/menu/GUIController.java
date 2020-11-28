@@ -1,4 +1,4 @@
-package gui.nhanvien.menu;
+package gui.congviec.menu;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -7,8 +7,6 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import util.GUILoader;
@@ -17,19 +15,6 @@ import util.SQL;
 public class GUIController implements Initializable {
 	@FXML
 	private GridPane list;
-	@FXML
-	private TextField filter;
-	
-	@FXML
-	private void onFilterAction() {
-		initList(filter.getText());
-		
-		filter.setOnKeyPressed(keyEvent -> {
-			   if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-			      onFilterAction();
-			   }
-			});
-	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -37,28 +22,28 @@ public class GUIController implements Initializable {
 	}
 	
 	private void initList() {
-		initList("");
-	}
-	
-	private void initList(String filter) {
 		try {
 			list.getChildren().clear();
-			ResultSet result = SQL.query("SELECT NHANVIEN.ID, NHANVIEN.TEN AS NVTEN, CONGVIEC.TEN AS CVTEN FROM NHANVIEN INNER JOIN CONGVIEC ON NHANVIEN.CONGVIEC = CONGVIEC.ID WHERE NHANVIEN.TEN LIKE N'%" + filter + "%'");
-			int colPerRow = 5;
+			ResultSet result = SQL.query("SELECT * FROM CONGVIEC");
+			int colPerRow = 4;
 			int row = 0;
 			int col = 0;
 			
 			while(result.next()) {
 				try {
-					GUILoader gui = GUILoader.load("gui/nhanvien/menu/NhanVien");
+					GUILoader gui = GUILoader.load("gui/congviec/menu/CongViec");
 					
 					AnchorPane element = (AnchorPane) gui.getNode();
-					NhanVienController elementController = (NhanVienController) gui.getController();
+					CongViecController elementController = (CongViecController) gui.getController();
 					
 					elementController.setImage(result.getString("ID"));
-					elementController.setName(result.getString("NVTEN"));
-					elementController.setId(result.getString("ID"));
-					elementController.setPosition(result.getString("CVTEN"));
+					elementController.setInfo(result.getString("THONGTIN"));
+					elementController.setSalary(result.getString("LUONG"));
+					elementController.setName(result.getString("TEN"));
+					
+					ResultSet result2 = SQL.query("SELECT COUNT(CONGVIEC) AS CVCOUNT FROM NHANVIEN WHERE CONGVIEC = '" + result.getString("ID") + "'");
+					result2.next();
+					elementController.setEmployeeCount(result2.getString("CVCOUNT"));
 					
 					list.add(element, col, row);
 				} catch (SQLException e) {

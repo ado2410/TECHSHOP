@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
-
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.hoadon.menu.GUIController">
+   <children>
+      <TextField fx:id="filter" layoutX="20.0" prefHeight="25.0" prefWidth="245.0" />
+      <AnchorPane layoutX="273.0" prefHeight="25.0" prefWidth="25.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onFilterAction" prefHeight="32.0" prefWidth="36.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="3.0" layoutY="3.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/general/SearchIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ScrollPane fitToWidth="true" layoutX="86.0" layoutY="80.0" prefHeight="610.0" prefWidth="1240.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+         <content>
+            <VBox fx:id="list" prefWidth="100.0" spacing="5.0" />
+         </content>
+      </ScrollPane>
+      <GridPane layoutX="20.0" layoutY="48.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="20.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="ID" />
+            <Label layoutX="10.0" layoutY="17.0" text="Ngày tạo" GridPane.columnIndex="1" />
+            <Label layoutX="315.0" layoutY="17.0" text="Nhân viên bán hàng" GridPane.columnIndex="2" />
+            <Label layoutX="620.0" layoutY="17.0" text="Khách hàng" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

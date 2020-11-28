@@ -1,4 +1,4 @@
-	package gui.khachhang.menu;
+package gui.hoadon.menu;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -10,15 +10,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import util.GUILoader;
 import util.SQL;
 
-public class GUIController implements Initializable {
-	@FXML
-	private GridPane list;
+public class GUIController implements Initializable{
 	@FXML
 	private TextField filter;
+	@FXML
+	private VBox list;
+	
 	@FXML
 	private void onFilterAction() {
 		initList(filter.getText());
@@ -26,7 +27,7 @@ public class GUIController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		initList();
+		initList("");
 		
 		filter.setOnKeyPressed(keyEvent -> {
 			   if (keyEvent.getCode().equals(KeyCode.ENTER)) {
@@ -35,38 +36,26 @@ public class GUIController implements Initializable {
 			});
 	}
 	
-	private void initList() {
-		initList("");
-	}
-	
 	private void initList(String filter) {
 		try {
 			list.getChildren().clear();
-			ResultSet result = SQL.query("SELECT ID, TEN FROM KHACHHANG WHERE TEN LIKE N'%" + filter + "%'");
-			int colPerRow = 5;
-			int row = 0;
-			int col = 0;
+			ResultSet result = SQL.query("SELECT HOADON.ID, NGAYTAO, NHANVIEN.TEN AS NVTEN, KHACHHANG.TEN AS KHTEN FROM HOADON INNER JOIN NHANVIEN ON HOADON.NHANVIEN = NHANVIEN.ID INNER JOIN KHACHHANG ON HOADON.KHACHHANG = KHACHHANG.ID WHERE HOADON.ID LIKE N'%" + filter + "%' OR NHANVIEN.TEN LIKE N'%" + filter + "%' OR KHACHHANG.TEN LIKE N'%" + filter + "%'");
 			
 			while(result.next()) {
 				try {
-					GUILoader gui = GUILoader.load("gui/khachhang/menu/List");
+					GUILoader gui = GUILoader.load("gui/hoadon/menu/HoaDon");
 					
 					AnchorPane element = (AnchorPane) gui.getNode();
-					ListController elementController = (ListController) gui.getController();
+					HoaDonController elementController = (HoaDonController) gui.getController();
 					
-					elementController.setImage(result.getString("ID"));
-					elementController.setName(result.getString("TEN"));
 					elementController.setId(result.getString("ID"));
+					elementController.setCreatedDate(result.getString("NGAYTAO"));
+					elementController.setEmployee(result.getString("NVTEN"));
+					elementController.setCustomer(result.getString("KHTEN"));
 					
-					list.add(element, col, row);
+					list.getChildren().add(element);
 				} catch (SQLException e) {
 					e.printStackTrace();
-				}
-				
-				col++;
-				if (col >= colPerRow) {
-					col = 0;
-					row++;
 				}
 			}
 		} catch (SQLException e1) {
