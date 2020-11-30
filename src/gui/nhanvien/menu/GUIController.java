@@ -46,7 +46,10 @@ public class GUIController implements Initializable {
 			ResultSet result = SQL.query("SELECT NHANVIEN.ID, NHANVIEN.TEN AS NVTEN, CONGVIEC.TEN AS CVTEN FROM NHANVIEN INNER JOIN CONGVIEC ON NHANVIEN.CONGVIEC = CONGVIEC.ID WHERE NHANVIEN.TEN LIKE N'%" + filter + "%'");
 			int colPerRow = 5;
 			int row = 0;
-			int col = 0;
+			int col = 1;
+			
+			GUILoader guiAdd = GUILoader.load("gui/nhanvien/menu/NhanVienAdd");
+			list.add(guiAdd.getNode(), 0, 0);
 			
 			while(result.next()) {
 				try {

@@ -19,6 +19,7 @@ public class Main extends Application {
 			primaryStage.setTitle("TECHNOLOGY SHOP");
 			primaryStage.show();
 			
+			GUILoader.setPrimaryStage(primaryStage);
 			GUILoader.mainNode = (BorderPane) gui.getNode();
 			GUILoader.loadMainScene();
 		} catch(Exception e) {

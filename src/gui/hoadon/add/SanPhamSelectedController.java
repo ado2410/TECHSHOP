@@ -15,6 +15,7 @@ public class SanPhamSelectedController {
 	private Text number;
 	
 	private int pricePerUnit;
+	private int maxNum;
 	
 	private GUIController guiController;
 	private Node node;
@@ -28,7 +29,7 @@ public class SanPhamSelectedController {
 	}
 
 	@FXML
-	private void onDecreaseAction() {
+	public void onDecreaseAction() {
 		int num = Integer.parseInt(number.getText());
 		if (num > 1)
 			num--;
@@ -40,9 +41,10 @@ public class SanPhamSelectedController {
 	}
 	
 	@FXML
-	private void onIncreaseAction() {
+	public void onIncreaseAction() {
 		int num = Integer.parseInt(number.getText());
-		num++;
+		if (num < maxNum)
+			num++;
 		number.setText(Integer.toString(num));
 		price.setText(Integer.toString(pricePerUnit*num));
 		
@@ -58,6 +60,10 @@ public class SanPhamSelectedController {
 		this.id.setText(id);
 	}
 	
+	public String getId() {
+		return id.getText();
+	}
+
 	public void setName(String name) {
 		this.name.setText(name);
 	}
@@ -77,5 +83,13 @@ public class SanPhamSelectedController {
 	
 	public String getNumber() {
 		return this.number.getText();
+	}
+
+	public int getMaxNum() {
+		return maxNum;
+	}
+
+	public void setMaxNum(int maxNum) {
+		this.maxNum = maxNum;
 	}
 }
