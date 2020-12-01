@@ -3,9 +3,14 @@ package util;
 import java.io.IOException;
 import java.util.Stack;
 
+import gui.debug.DebugController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class GUILoader {
 	public static BorderPane mainNode;
@@ -14,6 +19,7 @@ public class GUILoader {
 	
 	private static Stack<GUILoader> previousGUIs = new Stack<>();
 	private static GUILoader currentGUI;
+	private static Stage primaryStage;
 	
 	public Node getNode() {
 		return node;
@@ -31,6 +37,14 @@ public class GUILoader {
 		this.controller = controller;
 	}
 	
+	public static Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public static void setPrimaryStage(Stage primaryStage) {
+		GUILoader.primaryStage = primaryStage;
+	}
+
 	/**
 	 * Load tep tin fxml
 	 * @param url khong can chua duoi .fxml
@@ -59,6 +73,15 @@ public class GUILoader {
 			previousGUIs.push(currentGUI);
 		mainNode.setCenter(guiLoader.getNode());
 		currentGUI = guiLoader;
+	}
+	
+	static public void loadToNewWindow(GUILoader guiLoader) {
+		Scene scene = new Scene((AnchorPane)guiLoader.getNode());
+		Stage stage = new Stage();
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(GUILoader.getPrimaryStage().getScene().getWindow());
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	/**

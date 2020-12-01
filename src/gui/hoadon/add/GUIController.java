@@ -3,7 +3,9 @@ package gui.hoadon.add;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -18,6 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import util.GUILoader;
 import util.SQL;
+import util.Util;
 
 public class GUIController implements Initializable {
 	@FXML
@@ -44,7 +47,76 @@ public class GUIController implements Initializable {
 	
 	@FXML
 	private void onAddBillAction() {
+		if (selectedProductControllers.isEmpty()) {
+			Util.showMessage("Không có sản phẩm nào được chọn");
+			return;
+		}
 		
+		if (employeeList.getValue() == null) {
+			Util.showMessage("Chưa chọn nhân viên");
+			return;
+		}
+		if (customerList.getValue() == null) {
+			Util.showMessage("Chưa chọn khách hàng");
+			return;
+		}
+		
+		Random generator = new Random();
+		int id = 0;
+		do {
+			id = generator.nextInt((99999999 - 00000000) + 1);
+		} while (!isIdValid("HD" + Integer.toString(id)));
+		
+		for (int i = 0; i < selectedProductControllers.size(); i++) {
+			SanPhamSelectedController controller = selectedProductControllers.get(i);
+			if (getItemNumber(controller.getId()) < Integer.parseInt(controller.getNumber())) {
+				Util.showMessage("Sản phẩm vượt quá trong kho hàng");
+				return;
+			}
+		}
+		
+		LocalDateTime now = LocalDateTime.now();
+		String currentDate = "'" + now.getYear() + "/" + now.getMonthValue() + "/" + now.getDayOfMonth() + "'";
+		System.out.println("INSERT INTO HOADON (ID, NGAYTAO, NHANVIEN, KHACHHANG) VALUES ('HD" + id + "', " + currentDate + ", '" + employeeList.getValue() + "', '" + customerList.getValue() + "')");
+		
+		for (int i = 0; i < selectedProductControllers.size(); i++) {
+			SanPhamSelectedController controller = selectedProductControllers.get(i);
+			System.out.println("INSERT INTO CHITIETHOADON (ID, SANPHAM, SOLUONG) VALUES ('HD" + id + "', '" + controller.getId() + "', '" + controller.getNumber() + "')");
+			ResultSet result = SQL.query("SELECT SOLUONG FROM SANPHAM WHERE ID = '" + controller.getId() + "'");
+			try {
+				result.next();
+				System.out.println("UPDATE SANPHAM SET SOLUONG = " + (result.getInt("SOLUONG") - Integer.parseInt(controller.getNumber())) + " WHERE ID = " + controller.getId());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		Util.showMessage("Tạo thành công đơn hàng với id là HD" + id);
+		GUILoader.loadToScene(GUILoader.load("gui/hoadon/add/GUI"));
+	}
+	
+	private boolean isIdValid(String id) {
+		ResultSet result = SQL.query("SELECT COUNT(ID) AS NUM FROM HOADON WHERE ID = '" + id + "'");
+		try {
+			result.next();
+			if (result.getInt("NUM") == 0)
+				return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	private int getItemNumber(String id) {
+		ResultSet result = SQL.query("SELECT SOLUONG FROM SANPHAM WHERE ID = '" + id + "'");
+		try {
+			result.next();
+			if (result.wasNull())
+				return -1;
+			return result.getInt("SOLUONG");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 	
 	@Override
@@ -114,7 +186,15 @@ public class GUIController implements Initializable {
 	}
 	
 	public void addProduct(String id) {
-		ResultSet result = SQL.query("SELECT ID, TEN, GIA FROM SANPHAM WHERE ID = '" + id + "'");
+		for (int i = 0; i < selectedProductControllers.size(); i++) {
+			SanPhamSelectedController controller = selectedProductControllers.get(i);
+			if (controller.getId().compareTo(id) == 0) {
+				controller.onIncreaseAction();
+				return;
+			}
+		}
+		
+		ResultSet result = SQL.query("SELECT ID, TEN, GIA, SOLUONG FROM SANPHAM WHERE ID = '" + id + "'");
 		try {
 			while(result.next()) {
 				GUILoader gui = GUILoader.load("gui/hoadon/add/SanPhamSelected");
@@ -127,6 +207,7 @@ public class GUIController implements Initializable {
 				elementController.setPrice(result.getString("GIA"));
 				elementController.setGUIController(this);
 				elementController.setNode(element);
+				elementController.setMaxNum(result.getInt("SOLUONG"));
 				
 				selectedProductControllers.add(elementController);
 				
