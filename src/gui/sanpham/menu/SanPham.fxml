@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="215.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.SanPhamController">
+<AnchorPane prefHeight="215.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.SanPhamController">
    <children>
-      <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="288.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="288.0" prefWidth="600.0" styleClass="chu" stylesheets="@../../../../CSS/themhoadon.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Label fx:id="name" layoutX="259.0" layoutY="17.0" mouseTransparent="true" prefHeight="21.0" prefWidth="138.0" text="Laptop HP 15s">
          <font>
             <Font size="20.0" />

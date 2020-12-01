@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="60.0" prefHeight="60.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhacungcap.menu.NhaCungCapController">
+<AnchorPane minHeight="60.0" prefHeight="60.0" styleClass="vien" stylesheets="@../../../../CSS/themhoadon.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhacungcap.menu.NhaCungCapController">
    <children>
       <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="103.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <GridPane layoutX="131.0" layoutY="10.0" mouseTransparent="true" prefHeight="100.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

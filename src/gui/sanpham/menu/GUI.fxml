@@ -14,13 +14,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.GUIController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.GUIController">
    <children>
       <VBox prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
          <children>
             <SplitPane dividerPositions="0.25508607198748046" VBox.vgrow="SOMETIMES">
                <items>
-                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="626.0" prefWidth="406.0">
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="626.0" prefWidth="406.0" styleClass="chu" stylesheets="@../../../../CSS/themhoadon.css">
                      <content>
                         <VBox minWidth="300.0" prefHeight="356.0" prefWidth="300.0" spacing="20.0">
                            <children>
@@ -121,7 +121,7 @@
                         </VBox>
                      </content>
                   </ScrollPane>
-                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="626.0" prefWidth="722.0">
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="626.0" prefWidth="722.0" styleClass="chu" stylesheets="@../../../../CSS/themhoadon.css">
                      <content>
                         <VBox fx:id="list" spacing="10.0" />
                      </content>

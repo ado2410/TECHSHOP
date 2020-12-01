@@ -16,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.GUIController">
+<HBox prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.GUIController">
    <children>
-      <AnchorPane prefHeight="720.0" prefWidth="340.0">
+      <AnchorPane prefHeight="720.0" prefWidth="340.0" styleClass="chu" stylesheets="@../../../../CSS/themhoadon.css">
          <children>
             <ImageView fx:id="avatar" fitHeight="200.0" fitWidth="200.0" layoutX="70.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
                <image>
@@ -32,9 +32,9 @@
             </Text>
             <VBox layoutX="30.0" layoutY="324.0" prefHeight="196.0" prefWidth="264.0" spacing="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onInfoAction" prefHeight="25.0" prefWidth="267.0" text="Thông Tin Chung" />
-                  <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPurchasedAction" prefHeight="25.0" prefWidth="267.0" text="Sản Phẩm Đã Bán" />
-                  <Button layoutX="20.0" layoutY="65.0" mnemonicParsing="false" onAction="#onOtherInfoAction" prefHeight="25.0" prefWidth="267.0" text="Thông Tin Khác" />
+                  <Button mnemonicParsing="false" onAction="#onInfoAction" prefHeight="25.0" prefWidth="267.0" styleClass="vien" text="Thông Tin Chung" />
+                  <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPurchasedAction" prefHeight="25.0" prefWidth="267.0" styleClass="vien" text="Sản Phẩm Đã Bán" />
+                  <Button layoutX="20.0" layoutY="65.0" mnemonicParsing="false" onAction="#onOtherInfoAction" prefHeight="25.0" prefWidth="267.0" styleClass="vien" text="Thông Tin Khác" />
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
