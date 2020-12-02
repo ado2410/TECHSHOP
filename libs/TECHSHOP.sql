@@ -40,7 +40,7 @@ CREATE TABLE NHANVIEN (
 	SDT VARCHAR(10),
 	EMAIL VARCHAR(100),
 	NGAYLAMVIEC DATE,
-	HESO INT,
+	HESO FLOAT,
 	PHUCAP INT,
 	DIACHI NVARCHAR(100),
 	TINH VARCHAR(10),
@@ -154,7 +154,8 @@ INSERT INTO KHACHHANG (ID, TEN, NGAYSINH, GIOITINH, SDT, EMAIL, MAGIOITHIEU, NGA
 	('KH2', N'Phạm Thanh Hai', '1995/10/10', 0, '0367899841', 'hai95@gmail.com', 133445, '2019/9/10', N'66 Nguyễn Tất Thành, Duy Tân', 'T1'),
 	('KH3', N'Bành Kỳ Kỳ', '1994/6/1', 0, '0965412147', 'banhvanky1994@gmail.com', 1225744, '2019/8/7', N'68 Hùng Vương, Quang Trung', 'T1'),
 	('KH4', N'Nguyễn Xuân Hòn', '2000/6/5', 0, '0965412147', 'honhon2k@gmail.com', 1997744, '2020/10/24', N'72 Hùng Vương, Quang Trung', 'T1'),
-	('KH5', N'Thu Yến', '1997/5/4', 1, '0987987987', 'thuyencute@gmail.com', 655811, '2020/8/7', N'122 Phan Đình Phùng, Quang Trung', 'T1')
+	('KH5', N'Thu Yến', '1997/5/4', 1, '0987987987', 'thuyencute@gmail.com', 655811, '2020/8/7', N'122 Phan Đình Phùng, Quang Trung', 'T1'),
+	('KH6', N'Nguyễn Trúc Giang', '2000/12/5', 1, '039888654', 'yeugiangnhieu@gmail.com', 655811, '2020/7/18', N'Không biết, Quang Trung', 'T1')
 
 INSERT INTO CONGVIEC (ID, TEN, LUONG, THONGTIN)
 	VALUES
