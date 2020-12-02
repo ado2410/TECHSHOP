@@ -1,0 +1,21 @@
+.nen{
+	-fx-background-color: #353535;
+}
+.trangchu{
+	-fx-background-color: #787a72;
+	-fx-border-color: #e2e8cf;
+}
+.chu{
+	-fx-alignment: center;
+	-fx-border-color: #0f0f0e;
+}
+.dsmua{
+	-fx-border-color: #142236;
+}
+.vien{
+	-fx-border-color: #0f0f0e;
+}
+.nen:hover{
+	-fx-background-color: yellow;
+	transform: scale(1.1);
+}

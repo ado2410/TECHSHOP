@@ -18,7 +18,7 @@
 
 <HBox prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.GUIController">
    <children>
-      <AnchorPane prefHeight="720.0" prefWidth="340.0">
+      <AnchorPane prefHeight="720.0" prefWidth="340.0" styleClass="chu" stylesheets="@../../../../CSS/themhoadon.css">
          <children>
             <ImageView fx:id="avatar" fitHeight="200.0" fitWidth="200.0" layoutX="70.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
                <image>

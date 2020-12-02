@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,11 +11,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.general.MainController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.general.MainController">
    <top>
-      <VBox prefHeight="52.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="52.0" prefWidth="1280.0" styleClass="trangchu" stylesheets="@../../../CSS/themhoadon.css" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefWidth="200.0" spacing="10.0">
+            <HBox prefWidth="200.0" spacing="10.0" styleClass="vien" stylesheets="@../../../CSS/themhoadon.css">
                <children>
                   <AnchorPane>
                      <children>
@@ -45,11 +46,11 @@
       </VBox>
    </top>
    <left>
-      <VBox prefHeight="665.0" prefWidth="181.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="665.0" prefWidth="181.0" spacing="10.0" stylesheets="@../../../CSS/themhoadon.css" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane layoutX="20.0" layoutY="110.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onHomeAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onHomeAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/general/HomeIcon.png" />
@@ -60,7 +61,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onAddBillAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onAddBillAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/AddBill.png" />
@@ -71,7 +72,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onCustomerAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onCustomerAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Customer.png" />
@@ -82,7 +83,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onEmployeeAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onEmployeeAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Employee.png" />
@@ -93,7 +94,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onProductCategoryAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onProductCategoryAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/ProductCategory.png" />
@@ -104,7 +105,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onProductAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onProductAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Product.png" />
@@ -115,7 +116,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="170.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onCompanyAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onCompanyAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Company.png" />
@@ -126,7 +127,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="210.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onJobAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onJobAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Job.png" />
@@ -137,7 +138,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="250.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onBillAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onBillAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Bill.png" />
@@ -150,6 +151,10 @@
          <padding>
             <Insets left="10.0" right="10.0" />
          </padding>
+         <styleClass>
+            <String fx:value="trangchu" />
+            <String fx:value="vien" />
+         </styleClass>
       </VBox>
    </left>
 </BorderPane>
