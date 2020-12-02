@@ -127,6 +127,9 @@ public class GUIController implements Initializable {
 			query += "TEN LIKE N'%" + filter.getText() + "%'";
 			ResultSet result = SQL.query(query);
 			
+			GUILoader guiAdd = GUILoader.load("gui/sanpham/menu/SanPhamAdd");
+			list.getChildren().add(guiAdd.getNode());
+			
 			while(result.next()) {
 				try {
 					GUILoader gui = GUILoader.load("gui/sanpham/menu/SanPham");

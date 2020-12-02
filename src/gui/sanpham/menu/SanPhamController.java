@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import util.GUILoader;
+import util.SQL;
 import util.Util;
 
 public class SanPhamController {
@@ -29,6 +30,16 @@ public class SanPhamController {
 		GUIController controller = (GUIController) gui.getController();
 		controller.initInfo(id);
 		GUILoader.loadToScene(gui);
+	}
+	
+	@FXML
+	private void onDeleteAction() {
+		Util.continueWarning("Bạn có muốn xóa sản phẩm có id là " + id, this, "delete");
+	}
+	
+	public void delete() {
+		SQL.update("DELETE FROM SANPHAM WHERE ID = '" + id + "'");
+		GUILoader.loadToScene(GUILoader.load("gui/sanpham/menu/GUI"), false);
 	}
 	
 	public void setId(String id) {

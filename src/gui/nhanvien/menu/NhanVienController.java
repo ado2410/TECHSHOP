@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import util.GUILoader;
+import util.SQL;
 import util.Util;
 
 public class NhanVienController {
@@ -39,5 +40,15 @@ public class NhanVienController {
 		GUIController controller = (GUIController) gui.getController();
 		controller.initInfo(this.id.getText());
 		GUILoader.loadToScene(gui);
+	}
+	
+	@FXML
+	private void onDeleteAction() {
+		Util.continueWarning("Bạn có muốn xóa nhân viên có id là " + id.getText(), this, "delete");
+	}
+	
+	public void delete() {
+		SQL.update("DELETE FROM NHANVIEN WHERE ID = '" + id.getText() + "'");
+		GUILoader.loadToScene(GUILoader.load("gui/nhanvien/menu/GUI"), false);
 	}
 }

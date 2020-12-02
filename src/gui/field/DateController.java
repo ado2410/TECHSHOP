@@ -17,7 +17,7 @@ public class DateController extends FieldController implements Initializable {
 		value.setValue(LocalDate.now());
 	}
 	
-	public void setDate(LocalDate localDate) {
+	public void setValue(LocalDate localDate) {
 		this.value.setValue(localDate);
 	}
 	
@@ -26,6 +26,6 @@ public class DateController extends FieldController implements Initializable {
 	}
 	
 	public String getValueByString() {
-		return value.getValue().getYear() + "/ " + value.getValue().getMonth() + "/" + value.getValue().getDayOfMonth();
+		return value.getValue().getYear() + "/" + value.getValue().getMonthValue() + "/" + value.getValue().getDayOfMonth();
 	}
 }

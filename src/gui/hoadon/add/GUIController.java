@@ -91,7 +91,7 @@ public class GUIController implements Initializable {
 			}
 		}
 		Util.showMessage("Tạo thành công đơn hàng với id là HD" + id);
-		GUILoader.loadToScene(GUILoader.load("gui/hoadon/add/GUI"));
+		GUILoader.loadToScene(GUILoader.load("gui/hoadon/add/GUI"), false);
 	}
 	
 	private boolean isIdValid(String id) {

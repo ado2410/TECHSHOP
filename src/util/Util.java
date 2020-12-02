@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import gui.debug.ContinueController;
 import gui.debug.DebugController;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -46,5 +47,22 @@ public class Util {
 		
 		controller.setStage(stage);
 		controller.setMessage(message);
+	}
+	
+	public static void continueWarning(String message, Object object, String function, Object... params) {
+		GUILoader loader = GUILoader.load("gui/debug/Continue");
+		
+		ContinueController controller = (ContinueController) loader.getController();
+		
+		Scene scene = new Scene((AnchorPane)loader.getNode());
+		Stage stage = new Stage();
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(GUILoader.getPrimaryStage().getScene().getWindow());
+		stage.setScene(scene);
+		stage.show();
+		
+		controller.setStage(stage);
+		controller.setMessage(message);
+		controller.setFunction(object, function, params);
 	}
 }

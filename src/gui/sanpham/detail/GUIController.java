@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import util.GUILoader;
 import util.SQL;
 import util.Util;
 
@@ -33,6 +35,15 @@ public class GUIController {
 	private ImageView image;
 	@FXML
 	private Label number;
+	
+	@FXML
+	private void onEditAction() {
+		GUILoader loader = GUILoader.load("gui/sanpham/edit/GUI");
+		gui.sanpham.edit.GUIController controller = (gui.sanpham.edit.GUIController) loader.getController();
+		Stage stage = GUILoader.loadToNewWindow(loader, "Chỉnh sửa sản phẩm có id là " + id.getText());
+		controller.setStage(stage);
+		controller.edit(id.getText());
+	}
 	
 	public void initInfo(String id) {
 		try {

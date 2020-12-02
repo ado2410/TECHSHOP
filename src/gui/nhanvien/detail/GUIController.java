@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import util.GUILoader;
 import util.SQL;
 import util.Util;
@@ -69,6 +70,15 @@ public class GUIController implements Initializable{
 		
 	}
 	
+	@FXML
+	private void onEditAction() {
+		GUILoader loader = GUILoader.load("gui/nhanvien/edit/GUI");
+		gui.nhanvien.edit.GUIController controller = (gui.nhanvien.edit.GUIController) loader.getController();
+		Stage stage = GUILoader.loadToNewWindow(loader, "Chỉnh sửa nhân viên có id là " + id.getText());
+		controller.setStage(stage);
+		controller.edit(id.getText());
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		onInfoAction();
@@ -92,6 +102,10 @@ public class GUIController implements Initializable{
 			this.country.setText(result.getString("TINH"));
 			this.coefficientsSalary.setText(result.getString("HESO"));
 			this.allowance.setText(result.getString("PHUCAP"));
+			
+			ResultSet result2 = SQL.query("SELECT TEN FROM CONGVIEC WHERE ID = '" + result.getString("CONGVIEC") + "'");
+			result2.next();
+			this.job.setText(result2.getString("TEN"));
 			this.salary.setText(Integer.toString(result.getInt("HESO") * result.getInt("LUONG") + result.getInt("PHUCAP")));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

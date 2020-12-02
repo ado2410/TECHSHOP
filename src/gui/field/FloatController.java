@@ -23,6 +23,7 @@ public class FloatController extends FieldController implements Initializable {
                 }
             }
         });
+		value.setText("0.0");
 	}
 	
 	public void setValue(float value) {

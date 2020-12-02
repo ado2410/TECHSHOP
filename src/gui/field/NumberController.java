@@ -24,6 +24,7 @@ public class NumberController extends FieldController implements Initializable {
 		        }
 		    }
 		});
+		value.setText("0");
 	}
 	
 	public void setValue(int value) {

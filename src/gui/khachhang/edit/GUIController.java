@@ -1,4 +1,4 @@
-package gui.nhanvien.edit;
+package gui.khachhang.edit;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -9,7 +9,6 @@ import java.util.ResourceBundle;
 import gui.field.ChoiceBoxController;
 import gui.field.DateController;
 import gui.field.FieldController;
-import gui.field.FloatController;
 import gui.field.NumberController;
 import gui.field.StringController;
 import javafx.fxml.FXML;
@@ -24,10 +23,10 @@ public class GUIController implements Initializable {
 	@FXML
 	private GridPane grid;
 	
-	private String[] names = {"Tên", "Ngày sinh", "Giới tính", "Số điện thoại", "Email", "Ngày làm việc", "Hệ số", "Phụ cấp", "Địa chỉ", "Tỉnh", "Công việc"};
-	private String[] columns = {"TEN", "NGAYSINH", "GIOITINH", "SDT", "EMAIL", "NGAYLAMVIEC", "HESO", "PHUCAP", "DIACHI", "TINH", "CONGVIEC"};
-	private String[] fields = {"gui/field/String", "gui/field/Date", "gui/field/ChoiceBox", "gui/field/String", "gui/field/String", "gui/field/Date", "gui/field/Float", "gui/field/Number", "gui/field/String", "gui/field/ChoiceBox", "gui/field/ChoiceBox"};
-	private FieldController[] fieldsController = new FieldController[11];
+	private String[] names = {"Tên", "Ngày sinh", "Giới tính", "Số điện thoại", "Email", "Mã giới thiệu", "Địa chỉ", "Tỉnh", "Ngày tham gia"};
+	private String[] columns = {"TEN", "NGAYSINH", "GIOITINH", "SDT", "EMAIL", "MAGIOITHIEU", "DIACHI", "TINH", "NGAYTHAMGIA"};
+	private String[] fields = {"gui/field/String", "gui/field/Date", "gui/field/ChoiceBox", "gui/field/String", "gui/field/String", "gui/field/Number", "gui/field/String", "gui/field/ChoiceBox", "gui/field/Date"};
+	private FieldController[] fieldsController = new FieldController[9];
 	
 	private String[] gioiTinhValues = {"0", "1"};
 	private String[] gioiTinhHints = {"Nam", "Nữ"};
@@ -56,54 +55,50 @@ public class GUIController implements Initializable {
 		if (id.isEmpty()) {
 			Random generator = new Random();
 			do {
-				id = "NV" + Integer.toString(generator.nextInt((99999999 - 00000000) + 1));
+				id = "KH" + Integer.toString(generator.nextInt((99999999 - 00000000) + 1));
 			} while (!isIdValid(id));
 		}
 		
 		if (mode == 0) {
-			String execute = "INSERT INTO NHANVIEN (ID, TEN, NGAYSINH, GIOITINH, SDT, EMAIL, NGAYLAMVIEC, HESO, PHUCAP, DIACHI, TINH, CONGVIEC) VALUES (";
+			String execute = "INSERT INTO KHACHHANG (ID, TEN, NGAYSINH, GIOITINH, SDT, EMAIL, MAGIOITHIEU, DIACHI, TINH, NGAYTHAMGIA) VALUES (";
 			execute += "'" + id + "', N'";
 			execute += ((StringController)fieldsController[0]).getValue() + "', '";
 			execute += ((DateController)fieldsController[1]).getValueByString() + "', ";
 			execute += ((ChoiceBoxController)fieldsController[2]).getValue() + ", '";
 			execute += ((StringController)fieldsController[3]).getValue() + "', '";
-			execute += ((StringController)fieldsController[4]).getValue() + "', '";
-			execute += ((DateController)fieldsController[5]).getValueByString() + "', ";
-			execute += ((FloatController)fieldsController[6]).getValue() + ", ";
-			execute += ((NumberController)fieldsController[7]).getValue() + ", N'";
-			execute += ((StringController)fieldsController[8]).getValue() + "', '";
-			execute += ((ChoiceBoxController)fieldsController[9]).getValue() + "', '";
-			execute += ((ChoiceBoxController)fieldsController[10]).getValue() + "')";
+			execute += ((StringController)fieldsController[4]).getValue() + "', ";
+			execute += ((NumberController)fieldsController[5]).getValue() + ", N'";
+			execute += ((StringController)fieldsController[6]).getValue() + "', '";
+			execute += ((ChoiceBoxController)fieldsController[7]).getValue() + "', '";
+			execute += ((DateController)fieldsController[8]).getValueByString() + "')";
 			SQL.update(execute);
-			Util.showMessage("Tạo thành công nhân viên với id là " + id);
+			Util.showMessage("Tạo thành công khách hàng với id là " + id);
 			onCancelAction();
-			GUILoader.loadToScene(GUILoader.load("gui/nhanvien/menu/GUI"), false);
+			GUILoader.loadToScene(GUILoader.load("gui/khachhang/menu/GUI"), false);
 		}
 		else {
-			String execute = "UPDATE NHANVIEN SET ";
+			String execute = "UPDATE KHACHHANG SET ";
 			execute += "TEN = N'" + ((StringController)fieldsController[0]).getValue() + "', ";
 			execute += "NGAYSINH = '" + ((DateController)fieldsController[1]).getValueByString() + "', ";
 			execute += "GIOITINH = " + ((ChoiceBoxController)fieldsController[2]).getValue() + ", ";
 			execute += "SDT = '" + ((StringController)fieldsController[3]).getValue() + "', ";
 			execute += "EMAIL = '" + ((StringController)fieldsController[4]).getValue() + "', ";
-			execute += "NGAYLAMVIEC = '" + ((DateController)fieldsController[5]).getValueByString() + "', ";
-			execute += "HESO = " + ((FloatController)fieldsController[6]).getValue() + ", ";
-			execute += "PHUCAP = " + ((NumberController)fieldsController[7]).getValue() + ", ";
-			execute += "DIACHI = N'" + ((StringController)fieldsController[8]).getValue() + "', ";
-			execute += "TINH = '" + ((ChoiceBoxController)fieldsController[9]).getValue() + "', ";
-			execute += "CONGVIEC = '" + ((ChoiceBoxController)fieldsController[10]).getValue() + "' WHERE ID = '" + id + "'";
+			execute += "MAGIOITHIEU = " + ((NumberController)fieldsController[5]).getValue() + ", ";
+			execute += "DIACHI = N'" + ((StringController)fieldsController[6]).getValue() + "', ";
+			execute += "TINH = '" + ((ChoiceBoxController)fieldsController[7]).getValue() + "', ";
+			execute += "NGAYTHAMGIA = '" + ((DateController)fieldsController[8]).getValueByString() + "' WHERE ID = '" + id + "'";
 			SQL.update(execute);
-			Util.showMessage("Cập nhật thành công nhân viên id là " + id);
+			Util.showMessage("Cập nhật thành công khách hàng với id là " + id);
 			onCancelAction();
-			GUILoader loader = GUILoader.load("gui/nhanvien/detail/GUI");
-			gui.nhanvien.detail.GUIController controller = (gui.nhanvien.detail.GUIController) loader.getController();
+			GUILoader loader = GUILoader.load("gui/khachhang/detail/GUI");
+			gui.khachhang.detail.GUIController controller = (gui.khachhang.detail.GUIController) loader.getController();
 			controller.initInfo(id);
 			GUILoader.loadToScene(loader, false);
 		}
 	}
 	
 	private boolean isIdValid(String id) {
-		ResultSet result = SQL.query("SELECT COUNT(ID) AS NUM FROM NHANVIEN WHERE ID = '" + id + "'");
+		ResultSet result = SQL.query("SELECT COUNT(ID) AS NUM FROM KHACHHANG WHERE ID = '" + id + "'");
 		try {
 			result.next();
 			if (result.getInt("NUM") == 0)
@@ -120,7 +115,7 @@ public class GUIController implements Initializable {
 	}
 	
 	public void edit(String id) {
-		ResultSet result = SQL.query("SELECT ID, TEN, NGAYSINH, GIOITINH, SDT, EMAIL, NGAYLAMVIEC, HESO, PHUCAP, DIACHI, TINH, CONGVIEC FROM NHANVIEN WHERE ID = '" + id + "'");
+		ResultSet result = SQL.query("SELECT ID, TEN, NGAYSINH, GIOITINH, SDT, EMAIL, MAGIOITHIEU, DIACHI, TINH, NGAYTHAMGIA FROM KHACHHANG WHERE ID = '" + id + "'");
 		try {
 			while (result.next()) {
 				this.id = result.getString("ID");
@@ -130,12 +125,10 @@ public class GUIController implements Initializable {
 				((ChoiceBoxController)fieldsController[2]).setValue(result.getString("GIOITINH"));
 				((StringController)fieldsController[3]).setValue(result.getString("SDT"));
 				((StringController)fieldsController[4]).setValue(result.getString("EMAIL"));
-				((DateController)fieldsController[5]).setValue(result.getDate("NGAYLAMVIEC").toLocalDate());
-				((FloatController)fieldsController[6]).setValue(result.getFloat("HESO"));
-				((NumberController)fieldsController[7]).setValue(result.getInt("PHUCAP"));
-				((StringController)fieldsController[8]).setValue(result.getString("DIACHI"));
-				((ChoiceBoxController)fieldsController[9]).setValue(result.getString("TINH"));
-				((ChoiceBoxController)fieldsController[10]).setValue(result.getString("CONGVIEC"));
+				((NumberController)fieldsController[5]).setValue(result.getInt("MAGIOITHIEU"));
+				((StringController)fieldsController[6]).setValue(result.getString("DIACHI"));
+				((ChoiceBoxController)fieldsController[7]).setValue(result.getString("TINH"));
+				((DateController)fieldsController[8]).setValue(result.getDate("NGAYTHAMGIA").toLocalDate());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -155,35 +148,12 @@ public class GUIController implements Initializable {
 				controller.setChoiceList(gioiTinhValues, gioiTinhHints);
 				controller.setValue(0);
 			}
-			else if (i == 9) {
+			else if (i == 7) {
 				ChoiceBoxController controller = (ChoiceBoxController) loader.getController();
 				controller.setName(names[i]);
 				
 				ResultSet result1 = SQL.query("SELECT COUNT(ID) AS NUM FROM TINH");
 				ResultSet result2 = SQL.query("SELECT ID, TEN FROM TINH");
-				try {
-					result1.next();
-					int number = result1.getInt("NUM");
-					int j = 0;
-					String[] values = new String[number];
-					String[] hints = new String[number];
-					while(result2.next()) {
-						values[j] = result2.getString("ID");
-						hints[j] = result2.getString("TEN");
-						j++;
-					}
-					controller.setChoiceList(values, hints);
-					controller.setValue(0);
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			else if (i == 10) {
-				ChoiceBoxController controller = (ChoiceBoxController) loader.getController();
-				controller.setName(names[i]);
-				
-				ResultSet result1 = SQL.query("SELECT COUNT(ID) AS NUM FROM CONGVIEC");
-				ResultSet result2 = SQL.query("SELECT ID, TEN FROM CONGVIEC");
 				try {
 					result1.next();
 					int number = result1.getInt("NUM");

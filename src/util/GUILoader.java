@@ -3,7 +3,6 @@ package util;
 import java.io.IOException;
 import java.util.Stack;
 
-import gui.debug.DebugController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -69,19 +68,34 @@ public class GUILoader {
 	 * @param node
 	 */
 	static public void loadToScene(GUILoader guiLoader) {
-		if (currentGUI != null)
+		loadToScene(guiLoader, true);
+	}
+	
+	/**
+	 * Thay doi khung canh sang canh moi.
+	 * @param node
+	 * @param isNewGUI
+	 */
+	static public void loadToScene(GUILoader guiLoader, boolean isNewGUI) {
+		if (currentGUI != null && isNewGUI)
 			previousGUIs.push(currentGUI);
 		mainNode.setCenter(guiLoader.getNode());
 		currentGUI = guiLoader;
 	}
 	
-	static public void loadToNewWindow(GUILoader guiLoader) {
+	static public Stage loadToNewWindow(GUILoader guiLoader) {
+		return loadToNewWindow(guiLoader, "");
+	}
+	
+	static public Stage loadToNewWindow(GUILoader guiLoader, String title) {
 		Scene scene = new Scene((AnchorPane)guiLoader.getNode());
 		Stage stage = new Stage();
 		stage.initModality(Modality.WINDOW_MODAL);
 		stage.initOwner(GUILoader.getPrimaryStage().getScene().getWindow());
 		stage.setScene(scene);
+		stage.setTitle(title);
 		stage.show();
+		return stage;
 	}
 	
 	/**

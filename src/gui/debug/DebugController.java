@@ -26,5 +26,4 @@ public class DebugController {
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-	
 }

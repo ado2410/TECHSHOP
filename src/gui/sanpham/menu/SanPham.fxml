@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="215.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.SanPhamController">
+<AnchorPane prefHeight="215.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.sanpham.menu.SanPhamController">
    <children>
       <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="288.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Label fx:id="name" layoutX="259.0" layoutY="17.0" mouseTransparent="true" prefHeight="21.0" prefWidth="138.0" text="Laptop HP 15s">
@@ -50,5 +50,15 @@
             </Label>
          </children>
       </VBox>
+      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="25.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="94.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/general/TrashCan.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

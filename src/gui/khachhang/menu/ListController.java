@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import util.GUILoader;
+import util.SQL;
 import util.Util;
 import gui.khachhang.detail.GUIController;
 
@@ -33,5 +34,15 @@ public class ListController {
 		GUIController controller = (GUIController) gui.getController();
 		controller.initInfo(id.getText());
 		GUILoader.loadToScene(gui);
+	}
+	
+	@FXML
+	private void onDeleteAction() {
+		Util.continueWarning("Bạn có muốn xóa khách hàng có id là " + id.getText(), this, "delete");
+	}
+	
+	public void delete() {
+		SQL.update("DELETE FROM KHACHHANG WHERE ID = '" + id.getText() + "'");
+		GUILoader.loadToScene(GUILoader.load("gui/khachhang/menu/GUI"), false);
 	}
 }

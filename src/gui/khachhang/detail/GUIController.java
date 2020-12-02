@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import util.GUILoader;
 import util.SQL;
 import util.Util;
@@ -61,6 +62,15 @@ public class GUIController implements Initializable {
 	
 	@FXML void onOtherInfoAction() {
 		
+	}
+	
+	@FXML
+	private void onEditAction() {
+		GUILoader loader = GUILoader.load("gui/khachhang/edit/GUI");
+		gui.khachhang.edit.GUIController controller = (gui.khachhang.edit.GUIController) loader.getController();
+		Stage stage = GUILoader.loadToNewWindow(loader, "Chỉnh sửa khách hàng có id là " + id.getText());
+		controller.setStage(stage);
+		controller.edit(id.getText());
 	}
 	
 	@Override

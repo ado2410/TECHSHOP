@@ -45,7 +45,10 @@ public class GUIController implements Initializable {
 			ResultSet result = SQL.query("SELECT ID, TEN FROM KHACHHANG WHERE TEN LIKE N'%" + filter + "%'");
 			int colPerRow = 5;
 			int row = 0;
-			int col = 0;
+			int col = 1;
+			
+			GUILoader guiAdd = GUILoader.load("gui/khachhang/menu/ListAdd");
+			list.add(guiAdd.getNode(), 0, 0);
 			
 			while(result.next()) {
 				try {

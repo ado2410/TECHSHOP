@@ -1,7 +1,16 @@
 eclipse.preferences.version=1
 encoding//src/gui/general/MainMenuController.java=UTF-8
 encoding//src/gui/hoadon/add/GUIController.java=UTF-8
+encoding//src/gui/khachhang/detail/GUIController.java=UTF-8
+encoding//src/gui/khachhang/edit/GUIController.java=UTF-8
+encoding//src/gui/khachhang/menu/ListController.java=UTF-8
 encoding//src/gui/loaisanpham/GUIController.java=UTF-8
+encoding//src/gui/nhanvien/detail/GUIController.java=UTF-8
 encoding//src/gui/nhanvien/edit/GUIController.java=UTF-8
 encoding//src/gui/nhanvien/menu/GUIController.java=UTF-8
+encoding//src/gui/nhanvien/menu/NhanVienController.java=UTF-8
+encoding//src/gui/sanpham/detail/GUIController.java=UTF-8
+encoding//src/gui/sanpham/edit/GUIController.java=UTF-8
 encoding//src/gui/sanpham/menu/GUIController.java=UTF-8
+encoding//src/gui/sanpham/menu/SanPhamAddController.java=UTF-8
+encoding//src/gui/sanpham/menu/SanPhamController.java=UTF-8
