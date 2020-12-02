@@ -77,15 +77,18 @@ public class GUIController implements Initializable {
 		
 		LocalDateTime now = LocalDateTime.now();
 		String currentDate = "'" + now.getYear() + "/" + now.getMonthValue() + "/" + now.getDayOfMonth() + "'";
+		SQL.update("INSERT INTO HOADON (ID, NGAYTAO, NHANVIEN, KHACHHANG) VALUES ('HD" + id + "', " + currentDate + ", '" + employeeList.getValue() + "', '" + customerList.getValue() + "')");
 		System.out.println("INSERT INTO HOADON (ID, NGAYTAO, NHANVIEN, KHACHHANG) VALUES ('HD" + id + "', " + currentDate + ", '" + employeeList.getValue() + "', '" + customerList.getValue() + "')");
 		
 		for (int i = 0; i < selectedProductControllers.size(); i++) {
 			SanPhamSelectedController controller = selectedProductControllers.get(i);
-			System.out.println("INSERT INTO CHITIETHOADON (ID, SANPHAM, SOLUONG) VALUES ('HD" + id + "', '" + controller.getId() + "', '" + controller.getNumber() + "')");
+			SQL.update("INSERT INTO CHITIETHOADON (ID, SANPHAM, SOLUONG) VALUES ('HD" + id + "', '" + controller.getId() + "', " + controller.getNumber() + ")");
+			System.out.println("INSERT INTO CHITIETHOADON (ID, SANPHAM, SOLUONG) VALUES ('HD" + id + "', '" + controller.getId() + "', " + controller.getNumber() + ")");
 			ResultSet result = SQL.query("SELECT SOLUONG FROM SANPHAM WHERE ID = '" + controller.getId() + "'");
 			try {
 				result.next();
-				System.out.println("UPDATE SANPHAM SET SOLUONG = " + (result.getInt("SOLUONG") - Integer.parseInt(controller.getNumber())) + " WHERE ID = " + controller.getId());
+				SQL.update("UPDATE SANPHAM SET SOLUONG = " + (result.getInt("SOLUONG") - Integer.parseInt(controller.getNumber())) + " WHERE ID = '" + controller.getId() + "'");
+				System.out.println("UPDATE SANPHAM SET SOLUONG = " + (result.getInt("SOLUONG") - Integer.parseInt(controller.getNumber())) + " WHERE ID = '" + controller.getId() + "'");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

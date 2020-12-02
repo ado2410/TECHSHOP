@@ -31,7 +31,8 @@ public class GUIController implements Initializable{
 		billDetail.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("order"));
 		billDetail.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
 		billDetail.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("number"));
-		billDetail.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("price"));
+		billDetail.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("pricePerUnit"));
+		billDetail.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("price"));
 	}
 	
 	public void initInfo(String id) {
@@ -53,9 +54,9 @@ public class GUIController implements Initializable{
 		int price = 0;
 		try {
 			while(result2.next()) {
-				billDetail.getItems().add(new BillData(i, result2.getString("TEN"), result2.getInt("SOLUONG"), result2.getInt("GIA")));
+				billDetail.getItems().add(new BillData(i, result2.getString("TEN"), result2.getInt("SOLUONG"), result2.getInt("GIA"), result2.getInt("GIA")*result2.getInt("SOLUONG")));
 				i++;
-				price += result2.getInt("GIA");
+				price += result2.getInt("GIA")*result2.getInt("SOLUONG");
 			}
 			totalPrice.setText(Integer.toString(price));
 		} catch (SQLException e) {
