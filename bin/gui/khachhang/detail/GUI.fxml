@@ -4,31 +4,46 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.GUIController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.GUIController">
    <children>
-      <HBox prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="25.0" prefWidth="25.0">
          <children>
-            <GridPane styleClass="chu" stylesheets="@../../../../CSS/themhoadon.css">
+            <Button mnemonicParsing="false" onAction="#onEditAction" prefHeight="50.0" prefWidth="52.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/general/Pencil.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <GridPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="629.0" minWidth="300.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="989.0" minWidth="10.0" prefWidth="989.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
                <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints maxHeight="344.0" minHeight="10.0" prefHeight="223.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="252.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="187.0" minHeight="10.0" prefHeight="172.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="254.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <ImageView fx:id="imageLeft" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -41,121 +56,116 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <VBox prefHeight="325.0" prefWidth="257.0" spacing="30.0" GridPane.rowIndex="2">
+                  <GridPane GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onInfoAction" prefHeight="25.0" prefWidth="249.0" styleClass="vien" text="Thông Tin Khách Hàng">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </Button>
-                        <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPurchasedAction" prefHeight="25.0" prefWidth="249.0" styleClass="vien" text="Sản Phẩm Đã Mua" />
-                        <Button layoutX="20.0" layoutY="35.0" mnemonicParsing="false" onAction="#onOtherInfoAction" prefHeight="25.0" prefWidth="249.0" styleClass="vien" text="Thông Tin Khác" />
+                        <Button mnemonicParsing="false" onAction="#onInfoAction" prefHeight="25.0" prefWidth="249.0" styleClass="vien" text="Thông Tin Khách Hàng" />
+                        <Button mnemonicParsing="false" onAction="#onPurchasedAction" prefHeight="25.0" prefWidth="249.0" styleClass="vien" text="Sản Phẩm Đã Mua" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#onOtherInfoAction" prefHeight="25.0" prefWidth="249.0" styleClass="vien" text="Thông Tin Khác" GridPane.rowIndex="2" />
                      </children>
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </VBox>
+                  </GridPane>
                </children>
             </GridPane>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <AnchorPane prefHeight="720.0" prefWidth="949.0" style="-fx-text-box-border: red;">
-               <children>
-                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="12.0" layoutY="20.0" prefHeight="680.0" prefWidth="852.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="20.0">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <content>
-                        <VBox fx:id="container" prefWidth="100.0">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="680.0" prefWidth="852.0" GridPane.columnIndex="1">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <content>
+                  <VBox fx:id="container" prefWidth="100.0">
+                     <children>
+                        <GridPane fx:id="infoGrid" hgap="10.0" prefWidth="883.0" style="-fx-text-box-border: 50px;">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <GridPane fx:id="infoGrid" hgap="10.0" prefWidth="883.0" style="-fx-text-box-border: 50px;">
-                                 <columnConstraints>
-                                    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <Label text="Tên khách hàng" GridPane.rowIndex="2" />
-                                    <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="10.0" layoutY="25.0" text="Giới tính" GridPane.columnIndex="1" />
-                                    <Text fx:id="gender" layoutX="10.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nam/ Nữ" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="395.0" layoutY="29.0" text="Số Điện Thoại" GridPane.rowIndex="4" />
-                                    <Text fx:id="phoneNumber" layoutX="395.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000000" GridPane.rowIndex="5">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="10.0" layoutY="135.0" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Text fx:id="email" layoutX="10.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dasds@gmailc.om" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="395.0" layoutY="114.0" text="Quốc Tịch" GridPane.rowIndex="6" />
-                                    <Text fx:id="country" layoutX="395.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Việt Nôm" GridPane.rowIndex="7">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="10.0" layoutY="173.0" text="Mã Giới Thiệu" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <Text fx:id="inviteCode" layoutX="10.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12312313" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="395.0" layoutY="173.0" text="Địa Chỉ" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                    <Text fx:id="address" layoutX="395.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ở MÔ AI BIẾT" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="10.0" layoutY="108.0" text="ID" />
-                                    <Text fx:id="id" layoutX="10.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hekfkdkk" GridPane.rowIndex="1">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Text>
-                                    <Label layoutX="10.0" layoutY="195.0" text="Ngày sinh" GridPane.rowIndex="8" />
-                                    <Text fx:id="bod" layoutX="10.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.rowIndex="9">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                    <Label layoutX="10.0" layoutY="255.0" text="Ngày tham gia" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                    <Text fx:id="joinDate" layoutX="10.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.columnIndex="1" GridPane.rowIndex="9">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Text>
-                                 </children>
-                              </GridPane>
-                              <VBox fx:id="purchasedGrid" prefHeight="200.0" prefWidth="870.0" spacing="10.0" />
+                              <Label text="Tên khách hàng" GridPane.rowIndex="2" />
+                              <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="10.0" layoutY="25.0" text="Giới tính" GridPane.columnIndex="1" />
+                              <Text fx:id="gender" layoutX="10.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nam/ Nữ" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="395.0" layoutY="29.0" text="Số Điện Thoại" GridPane.rowIndex="4" />
+                              <Text fx:id="phoneNumber" layoutX="395.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000000" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="10.0" layoutY="135.0" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text fx:id="email" layoutX="10.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dasds@gmailc.om" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="395.0" layoutY="114.0" text="Quốc Tịch" GridPane.rowIndex="6" />
+                              <Text fx:id="country" layoutX="395.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Việt Nôm" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="10.0" layoutY="173.0" text="Mã Giới Thiệu" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Text fx:id="inviteCode" layoutX="10.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12312313" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="395.0" layoutY="173.0" text="Địa Chỉ" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Text fx:id="address" layoutX="395.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ở MÔ AI BIẾT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="10.0" layoutY="108.0" text="ID" />
+                              <Text fx:id="id" layoutX="10.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hekfkdkk" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="10.0" layoutY="195.0" text="Ngày sinh" GridPane.rowIndex="8" />
+                              <Text fx:id="bod" layoutX="10.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="10.0" layoutY="255.0" text="Ngày tham gia" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Text fx:id="joinDate" layoutX="10.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hổng có biết" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
                            </children>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
+                        </GridPane>
+                        <VBox fx:id="purchasedGrid" prefHeight="200.0" spacing="10.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
          </children>
-      </HBox>
-      <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="25.0" prefWidth="25.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#onEditAction" prefHeight="50.0" prefWidth="52.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../images/general/Pencil.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+      </GridPane>
    </children>
 </AnchorPane>

@@ -6,15 +6,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.SoldListController">
+<AnchorPane minWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhanvien.detail.SoldListController">
    <children>
-      <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button mnemonicParsing="false" onAction="#onAction" prefHeight="56.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <ImageView fx:id="image" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="3.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../images/general/Bill.png" />
          </image></ImageView>
       <Label fx:id="id" layoutX="82.0" layoutY="20.0" mouseTransparent="true" text="ID" />
-      <Label fx:id="date" layoutX="138.0" layoutY="20.0" mouseTransparent="true" text="Date" />
+      <Label fx:id="date" layoutX="200.0" layoutY="20.0" mouseTransparent="true" text="Date" />
       <Label fx:id="price" layoutX="353.0" layoutY="20.0" mouseTransparent="true" text="Price" AnchorPane.rightAnchor="21.0" />
    </children>
 </AnchorPane>

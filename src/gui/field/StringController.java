@@ -13,5 +13,5 @@ public class StringController extends FieldController {
 	
 	public String getValue() {
 		return this.value.getText();
-	}
+	} 
 }

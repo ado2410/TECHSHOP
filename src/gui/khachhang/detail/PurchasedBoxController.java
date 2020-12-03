@@ -3,6 +3,7 @@ package gui.khachhang.detail;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import util.GUILoader;
 import util.Util;
 
 public class PurchasedBoxController {
@@ -14,11 +15,6 @@ public class PurchasedBoxController {
 	private Label date;
 	@FXML
 	private Label price;
-	
-	@FXML
-	private void onAction() {
-		
-	}
 	
 	public void setImage(String fileName) {
 		this.image.setImage(Util.loadImage("khachhang/" + fileName + ".png", 50, 50, "general/Purchased.png"));
@@ -34,5 +30,13 @@ public class PurchasedBoxController {
 	
 	public void setPrice(String price) {
 		this.price.setText(price + "d");
+	}
+	
+	@FXML
+	private void onAction() {
+		GUILoader loader = GUILoader.load("gui/hoadon/detail/GUI");
+		gui.hoadon.detail.GUIController guiController = (gui.hoadon.detail.GUIController) loader.getController();
+		guiController.initInfo(id.getText());
+		GUILoader.loadToScene(loader);
 	}
 }
