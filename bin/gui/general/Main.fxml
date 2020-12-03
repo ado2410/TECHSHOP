@@ -19,7 +19,7 @@
                <children>
                   <AnchorPane>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onBackAction" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button mnemonicParsing="false" onAction="#onBackAction" styleClass="nen" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <image>
                               <Image url="@../../../images/general/ReturnIcon.png" />
@@ -29,7 +29,11 @@
                   </AnchorPane>
                   <AnchorPane layoutX="10.0" layoutY="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onHomeAction" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Button mnemonicParsing="false" onAction="#onHomeAction" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <styleClass>
+                              <String fx:value="nen" />
+                              <String fx:value="tc" />
+                           </styleClass></Button>
                         <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <image>
                               <Image url="@../../../images/general/HomeIcon.png" />
@@ -50,7 +54,12 @@
          <children>
             <AnchorPane layoutX="20.0" layoutY="110.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onHomeAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onHomeAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="nuttc" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/general/HomeIcon.png" />
@@ -61,7 +70,12 @@
             </AnchorPane>
             <AnchorPane prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onAddBillAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onAddBillAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="themhoadon" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/AddBill.png" />
@@ -72,7 +86,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onCustomerAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onCustomerAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="khachhang" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Customer.png" />
@@ -83,7 +102,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onEmployeeAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onEmployeeAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="nhanvien" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Employee.png" />
@@ -94,7 +118,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onProductCategoryAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onProductCategoryAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="loaisp" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/ProductCategory.png" />
@@ -105,7 +134,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onProductAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onProductAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="sanpham" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Product.png" />
@@ -116,7 +150,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="170.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onCompanyAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onCompanyAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="nhacc" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Company.png" />
@@ -127,7 +166,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="210.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onJobAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onJobAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="congviec" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Job.png" />
@@ -138,7 +182,12 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="250.0" prefHeight="40.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onBillAction" prefHeight="30.0" prefWidth="181.0" styleClass="vien" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#onBillAction" prefHeight="30.0" prefWidth="181.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <styleClass>
+                        <String fx:value="vien" />
+                        <String fx:value="nen" />
+                        <String fx:value="hoadon" />
+                     </styleClass></Button>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="5.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/main/Bill.png" />

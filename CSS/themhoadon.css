@@ -17,5 +17,37 @@
 }
 .nen:hover{
 	-fx-background-color: yellow;
-	transform: scale(1.1);
+}
+.nen {
+	-fx-background-color: #d5e6da;
+}
+.tc:hover{
+	-fx-background-color: #2e0b73;
+}
+.nuttc:hover{
+	-fx-background-color: #1f5e14;
+}
+.themhoadon:hover{
+	-fx-background-color: #44a5ad;
+}
+.khachhang:hover{
+	-fx-background-color: #5f752f;
+}
+.nhanvien:hover{
+	-fx-background-color: #912d46;
+}
+.loaisp:hover{
+	-fx-background-color: #babd73;
+}
+.sanpham:hover{
+	-fx-background-color: #17170f;
+}
+.nhacc:hover{
+	-fx-background-color: #758573;
+}
+.congviec:hover{
+	-fx-background-color: #9a8fff;
+}
+.hoadon:hover{
+	-fx-background-color: #797e80;
 }
