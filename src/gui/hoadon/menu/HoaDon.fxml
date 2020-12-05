@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -12,10 +14,10 @@
       <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="30.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <GridPane mouseTransparent="true" prefHeight="30.0" prefWidth="600.0" styleClass="vien" stylesheets="@../../../../CSS/themhoadon.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" percentWidth="20.0" prefWidth="143.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" percentWidth="20.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" percentWidth="30.0" prefWidth="128.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" percentWidth="30.0" prefWidth="162.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -27,5 +29,15 @@
             <Label fx:id="customer" layoutX="310.0" layoutY="17.0" mouseTransparent="true" text="Khách hàng" GridPane.columnIndex="3" />
          </children>
       </GridPane>
+      <AnchorPane layoutX="558.0" layoutY="3.0" prefHeight="25.0" prefWidth="25.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="94.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/general/TrashCan.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

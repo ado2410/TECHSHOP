@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/gui/general/MainMenuController.java=UTF-8
 encoding//src/gui/hoadon/add/GUIController.java=UTF-8
+encoding//src/gui/hoadon/menu/HoaDonController.java=UTF-8
 encoding//src/gui/khachhang/detail/GUIController.java=UTF-8
 encoding//src/gui/khachhang/edit/GUIController.java=UTF-8
 encoding//src/gui/khachhang/menu/ListController.java=UTF-8

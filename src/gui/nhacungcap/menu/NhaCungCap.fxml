@@ -13,7 +13,7 @@
 <AnchorPane minHeight="60.0" prefHeight="60.0" styleClass="vien" stylesheets="@../../../../CSS/themhoadon.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.nhacungcap.menu.NhaCungCapController">
    <children>
       <Button mnemonicParsing="false" onAction="#onDetailAction" prefHeight="103.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <GridPane layoutX="131.0" layoutY="10.0" mouseTransparent="true" prefHeight="100.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane layoutX="2.0" layoutY="2.0" mouseTransparent="true" prefHeight="58.0" prefWidth="826.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="1.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="16.6" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="16.6" />
@@ -41,12 +41,12 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text fx:id="phone" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="012345678" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="4">
+            <Text fx:id="phone" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Đang cập nhật" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="4">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text fx:id="email" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="ncc@gmail.com" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="5">
+            <Text fx:id="email" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Đang cập nhật" textAlignment="CENTER" wrappingWidth="108.80339050292969" GridPane.columnIndex="5">
                <font>
                   <Font size="15.0" />
                </font>
@@ -58,5 +58,15 @@
             </ImageView>
          </children>
       </GridPane>
+      <AnchorPane layoutX="881.0" layoutY="18.0" prefHeight="25.0" prefWidth="25.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="94.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../../images/general/TrashCan.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
