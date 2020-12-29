@@ -29,6 +29,11 @@ public class NhaCungCapController {
 		GUILoader.loadToScene(gui);
 	}
 	
+	@FXML
+	private void onDeleteAction() {
+		
+	}
+	
 	public void setImage(String fileName) {
 		this.image.setImage(Util.loadImage("nhacungcap/" + fileName + ".png", 100, 100, "general/Company.png"));
 	}

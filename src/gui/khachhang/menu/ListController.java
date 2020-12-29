@@ -17,7 +17,7 @@ public class ListController {
 	private Text id;
 	
 	public void setImage(String fileName) {
-		this.image.setImage(Util.loadImage("nhanvien/" + fileName + ".png", 100, 100, "general/Avatar.png"));
+		this.image.setImage(Util.loadImage("khachhang/" + fileName + ".png", 100, 100, "general/Avatar.png"));
 	}
 	
 	public void setName(String name) {

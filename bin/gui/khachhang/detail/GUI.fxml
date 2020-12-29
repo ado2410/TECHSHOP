@@ -16,16 +16,6 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.khachhang.detail.GUIController">
    <children>
-      <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="25.0" prefWidth="25.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#onEditAction" prefHeight="50.0" prefWidth="52.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../images/general/Pencil.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <GridPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="629.0" minWidth="300.0" prefWidth="300.0" />
@@ -167,5 +157,15 @@
             </ScrollPane>
          </children>
       </GridPane>
+      <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="25.0" prefWidth="25.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onEditAction" prefHeight="50.0" prefWidth="52.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/general/Pencil.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
