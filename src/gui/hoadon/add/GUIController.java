@@ -43,6 +43,7 @@ public class GUIController implements Initializable {
 	@FXML
 	private void onFilterAction() {
 		initProductList(filter.getText());
+		filter.setText("");
 	}
 	
 	@FXML
