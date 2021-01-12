@@ -22,6 +22,7 @@ public class GUIController implements Initializable {
 	@FXML
 	private void onFilterAction() {
 		initList(filter.getText());
+		filter.setText("");
 	}
 	
 	@Override

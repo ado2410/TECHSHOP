@@ -23,6 +23,7 @@ public class GUIController implements Initializable {
 	@FXML
 	private void onFilterAction() {
 		initList(filter.getText());
+		filter.setText("");
 		
 		filter.setOnKeyPressed(keyEvent -> {
 			   if (keyEvent.getCode().equals(KeyCode.ENTER)) {
